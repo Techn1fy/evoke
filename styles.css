@@ -81,7 +81,7 @@
     .logo {
         max-width: 90vw;
         width: 90vw;
-        margin-bottom: 18px;
+        margin-bottom: 50px;
     }
     .img-fluid-md {
         max-width: 95vw;
@@ -120,4 +120,14 @@
     .video-bg::before {
         background: rgba(0,0,0,0.65);
     }
+    .m-space {
+      margin-bottom: 2rem !important;
+    }
+    .email-link {
+      font-size: 14px !important;
+    color: inherit;
+    font: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
 }
