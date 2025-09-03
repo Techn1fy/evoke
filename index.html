@@ -4,40 +4,514 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evoke - Coming Soon</title>
+    <title>Evoke</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="assets/logo.png" type="image/x-icon">
+    <link href="assets/styrene-a-web/stylesheet.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="styles.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="video-bg">
-        <video autoplay muted loop playsinline>
-            <source src="video2.mp4" type="video/mp4">
-        </video>
-        <div class="content mt-4">
-            <img src="logo.png" class="logo" alt="">
-            <img src="coming-soon-banner.png" class="img-fluid-md mt-4 mb-md-0 mb-5" alt="">
-            <div class="row d-flex justify-content-center align-items-center mt-4">
-                <div class="col-md-7 mb-md-0 mb-4 pb-md-0 pb-2">
-                    <p class="inria-paragraph mb-4 px-md-0 px-4">
-                        Evoke Interactive is an award-winning creative
-                        studio located in the heart of Michigan.
-                    </p>
-                    <p class="inria-paragraph mb-4 px-md-0 px-4">
-                        We focus on storytelling, film making,<br class="d-block d-md-none"> and interactive experiences.
-                    </p>
-                    <p class="inria-paragraph mb-4 px-md-0 px-4">
-                        <a href="mailto:hello@evokeinteractive.com" class="email-link">hello@evokeinteractive.com</a>
-                    </p>
+
+
+    <nav class="navbar position-absolute w-100" style="z-index: 1000;">
+        <div class="container position-relative mt-md-4 mt-0">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/logo.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler d-flex align-items-center d-block border-0 ms-auto" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="me-2 mond font-34 text-white px-md-3 px-0">Latest</span>
+                <span class="latest-divider"></span>
+                <span class="navbar-toggler-icon mx-md-3 mx-0"></span>
+            </button>
+            <div class="collapse" id="navbarMenu">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Studio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Gaming</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Academy</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero position-relative overflow-hidden">
+        <div class="container h-100">
+            <div class="row h-100 justify-content-center">
+                <div class="col-12 col-lg-10 d-flex flex-column justify-content-center hero-content">
+                    <h1 class="hero-font weight-700 text-white text-center">
+                        Build Experiences<br>That Evolve
+                    </h1>
+                    <div class="col-md-6 d-flex justify-content-center mx-auto">
+                        <p class="inter-font font-20 text-white text-center mt-3">
+                            Create immersive and transformative digital experiences that adapt and grow with your
+                            audience.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="qr-container position-absolute d-flex align-items-center">
+                <div class="qr-code">
+                    <img src="assets/qr-code.png" alt="QR Code" class="img-fluid">
+                </div>
+                <div class="qr-text ps-3">
+                    <p class="inter-font font-14 weight-500 text-white mb-1">Scan to connect</p>
+                    <p class="inter-font font-12 weight-400 text-white-50 mb-0">Experience on mobile</p>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <section id="about-section" class="position-relative section-vspace">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-7">
+                    <p class="text-white font-20 letter-space-4 text-md-start text-center">Stories that Teach, Systems
+                        that Grow.</p>
+                    <p class="hero-font font-34 text-md-start text-center scroll-reveal-text">Evoke Interactive is a
+                        creative-technology system built to unify storytelling, interactive learning, and media
+                        creation. Through Evoke Studios, Games, and Academy, we deliver intelligent content that moves
+                        with purpose. We are not an agency or a tool—we are the framework behind dynamic experiences
+                        that engage, teach, and grow with the user.</p>
                 </div>
             </div>
         </div>
+    </section>
+
+
+    <section class="bg-black section-vspace">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 mx-auto">
+                    <div id="customCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-navigation-container">
+                            <button class="carousel-control-prev custom-carousel-btn" type="button"
+                                data-bs-target="#customCarousel" data-bs-slide="prev">
+                                <span class="fa fa-chevron-left custom-chevron"></span>
+                            </button>
+
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="carousel-content-container">
+                                        <img src="assets/laptop.png" class="carousel-img" alt="Slide 1">
+                                        <h1 class="inter font-60 weight-600 text-white text-center mt-4">Game
+                                            Development</h1>
+                                        <div class="col-md-8 mx-auto">
+                                            <p class="color-white-70 inter font-20 text-center mt-3">From material
+                                                choices to media choreography, every wall, light, and interaction is
+                                                tuned to evoke emotion, teach something new, and drive behavior.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="carousel-content-container">
+                                        <img src="assets/game-screenshot-2.png" class="carousel-img" alt="Slide 2">
+                                        <h1 class="inter font-60 weight-600 text-white text-center mt-4">Game
+                                            Development</h1>
+                                        <div class="col-md-8 mx-auto">
+                                            <p class="color-white-70 inter font-20 text-center mt-3">From material
+                                                choices to media choreography, every wall, light, and interaction is
+                                                tuned to evoke emotion, teach something new, and drive behavior.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="carousel-control-next custom-carousel-btn" type="button"
+                                data-bs-target="#customCarousel" data-bs-slide="next">
+                                <span class="fa fa-chevron-right custom-chevron"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-black section-vspace overlay-bg">
+        <div class="container">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-md-6">
+                    <img src="assets/game-screenshot.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-md-6 px-md-5">
+                    <div id="textCarousel" class="text-carousel">
+                        <div class="carousel-indicators-custom mb-4 px-md-3 px-0">
+                            <button type="button" data-bs-target="#textCarousel" data-bs-slide-to="0" class="active"
+                                aria-label="Slide 1" aria-current="true"></button>
+                            <button type="button" data-bs-target="#textCarousel" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#textCarousel" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <h1 class="inter font-48 weight-600 text-white mb-4">All You Need,<br
+                                        class="d-none d-md-block"> And Some More.</h1>
+                                <p class="color-white-70 inter font-20">From material choices to media choreography,
+                                    every wall, light, and interaction is tuned to evoke emotion, teach something new,
+                                    and drive behavior.</p>
+                            </div>
+                            <div class="carousel-item">
+                                <h1 class="inter font-48 weight-600 text-white mb-4">
+                                    Built to Inspire,<br class="d-none d-md-block">Designed to Endure.</h1>
+                                <p class="color-white-70 inter font-20">From textures to transitions, every surface,
+                                    detail, and movement is shaped to spark curiosity, create meaning, and leave a
+                                    lasting impression.</p>
+                            </div>
+                            <div class="carousel-item">
+                                <h1 class="inter font-48 weight-600 text-white mb-4">More Than Spaces,<br
+                                        class="d-none d-md-block"> Experiences That Speak.</h1>
+                                <p class="color-white-70 inter font-20"> From subtle cues to bold statements, every
+                                    corner, sound, and gesture is crafted to tell stories, stir emotions, and guide
+                                    human connection.</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-nav-buttons d-flex justify-content-end mt-5">
+                            <button class="custom-carousel-btn me-3" type="button" data-bs-target="#textCarousel"
+                                data-bs-slide="prev">
+                                <span class="fa fa-chevron-left custom-chevron"></span>
+                            </button>
+                            <button class="custom-carousel-btn" type="button" data-bs-target="#textCarousel"
+                                data-bs-slide="next">
+                                <span class="fa fa-chevron-right custom-chevron"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-black section-vspace">
+        <div class="container">
+            <div class="row d-flex">
+                <div class="col-md-12">
+                    <h1 class="inter font-48 weight-600 text-white text-md-start text-center mb-4">Meet Our Clients</h1>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-between align-items-center">
+                <div class="col-md-7">
+                    <p class="color-white-70 inter font-20 mb-4">From material choices to media choreography, every
+                        wall, light, and interaction is tuned to evoke emotion, teach something new, and drive behavior.
+                    </p>
+                </div>
+                <div class="col-md-5 d-flex justify-content-md-end justify-content-center">
+                    <button class="custom-carousel-btn me-3" type="button">
+                        <span class="fa fa-chevron-left custom-chevron"></span>
+                    </button>
+                    <button class="custom-carousel-btn" type="button">
+                        <span class="fa fa-chevron-right custom-chevron"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <div class="client-carousel-wrapper position-relative overflow-hidden">
+                        <div id="clientsRow" class="client-carousel-row d-flex transition-slide">
+                            <div class="client-box-wrapper">
+                                <div class="client-box"
+                                    style="background: linear-gradient(to bottom, #000000 0%, #000000 40%, #ff0080 100%);">
+                                    <h4 class="inter font-20 weight-600 text-white mb-3">Spicy Studios</h4>
+                                    <img src="assets/client-1.png" alt="Client 1" class="img-fluid client-logo">
+                                </div>
+                            </div>
+
+                            <div class="client-box-wrapper">
+                                <div class="client-box"
+                                    style="background: linear-gradient(to bottom, #000000 0%, #000000 40%, #8B2FB2 100%);">
+                                    <h4 class="inter font-20 weight-600 text-white mb-3">Brew Beans</h4>
+                                    <img src="assets/client-2.png" alt="Client 2" class="img-fluid client-logo">
+                                </div>
+                            </div>
+
+                            <div class="client-box-wrapper">
+                                <div class="client-box"
+                                    style="background: linear-gradient(to bottom, #000000 0%, #000000 40%, #01B721 100%);">
+                                    <h4 class="inter font-20 weight-600 text-white mb-3">Pure Chips Studio</h4>
+                                    <img src="assets/client-3.png" alt="Client 3" class="img-fluid client-logo">
+                                </div>
+                            </div>
+
+
+                            <div class="client-box-wrapper">
+                                <div class="client-box"
+                                    style="background: linear-gradient(to bottom, #000000 0%, #000000 40%, #FFA500 100%);">
+                                    <h4 class="inter font-20 weight-600 text-white mb-3">On the Go</h4>
+                                    <img src="assets/client-1.png" alt="Client 4" class="img-fluid client-logo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-black section-vspace bg-img-section">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-6 offset-md-5">
+                    <h1 class="inter font-48 weight-600 text-white mb-4 text-md-start text-center">There’s More Than<br class="d-none d-md-block">
+                        What Meets The Eye.</h1>
+                    <p class="color-white-70 inter font-20 text-md-start text-center">From material choices to media choreography, every wall,
+                        light, and interaction is tuned to evoke emotion, teach something new, and drive behavior.</p>
+                    <button class="explore-btn mt-3 mx-md-0 mx-auto d-block">
+                        Explore Other Universes <i class="fa fa-arrow-right ms-2"></i>
+                    </button>
+                    <div class="d-flex gap-3 mt-5">
+                        <div class="feature-box flex-fill d-flex flex-column align-items-center justify-content-center">
+                            <img src="assets/studio.png" alt="Logo 1" class="feature-logo mt-auto mb-2">
+                        </div>
+                        <div class="feature-box flex-fill d-flex flex-column align-items-center justify-content-center">
+                            <img src="assets/gaming.png" alt="Logo 2" class="feature-logo mt-auto mb-2">
+                        </div>
+                        <div class="feature-box flex-fill d-flex flex-column align-items-center justify-content-center">
+                            <img src="assets/academy.png" alt="Logo 3" class="feature-logo mt-auto mb-2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-black section-onlytop">
+        <div class="container gradient-bg py-5">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <p class="font-16 text-white mb-2 letter-space-4 weight-500 text-md-start text-center">TRUSTED BY 15M MEMBERS</p>
+                    <h1 class="font-56 weight-700 text-white mb-0 text-md-start text-center">The Proof<br>Writes Itself</h1>
+                </div>
+                <div class="col-md-6">
+                    <div class="row text-white text-center gy-4">
+                        <div class="col-6 col-sm-6 col-md-6">
+                            <h1 class="font-48 weight-700 mb-1">56<span
+                                    class="text-white-50 font-32 weight-500">+</span></h1>
+                            <p class="font-14 text-white-50 letter-space-4 weight-500 mb-0">CAMERAS</p>
+                        </div>
+                        <div class="col-6 col-sm-6 col-md-6">
+                            <h1 class="font-48 weight-700 mb-1">2,500 <span class="text-white-50 weight-500 font-32">sq.
+                                    ft.</span></h1>
+                            <p class="font-14 text-white-50 letter-space-4 weight-500 mb-0">MOTION CAPTURE SPACE</p>
+                        </div>
+                        <div class="col-6 col-sm-6 col-md-6">
+                            <h1 class="font-48 weight-700 mb-1">15<span
+                                    class="text-white-50 weight-500 font-32">+</span></h1>
+                            <p class="font-14 text-white-50 letter-space-4 weight-500 mb-0">ACTORS</p>
+                        </div>
+                        <div class="col-6 col-sm-6 col-md-6">
+                            <h1 class="font-48 weight-700 mb-1">1000<span
+                                    class="text-white-50 weight-500 font-32">+</span></h1>
+                            <p class="font-14 text-white-50 letter-space-4 weight-500 mb-0">ANIMATIONS CREATED</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-black section-vspace">
+        <div class="container">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-md-6">
+                    <h1 class="inter font-48 weight-600 text-white text-md-start text-center mb-4">Insights</h1>
+                    <p class="color-white-70 inter text-md-start text-center font-20">From material choices to media
+                        choreography, every wall, light, is tuned to evoke emotion, teach something new, and drive
+                        behavior.</p>
+
+                    <div class="cards-container d-flex mt-5">
+                        <div class="vertical-indicator me-4">
+                            <div class="progress-line-bg"></div>
+                            <div class="progress-line-fill"></div>
+                            <div class="progress-segments">
+                                <div class="segment-marker" data-index="0"></div>
+                                <div class="segment-marker" data-index="1"></div>
+                                <div class="segment-marker" data-index="2"></div>
+                                <div class="segment-marker" data-index="3"></div>
+                                <div class="segment-marker" data-index="4"></div>
+                                <div class="segment-marker" data-index="5"></div>
+                                <div class="segment-marker" data-index="6"></div>
+                                <div class="segment-marker" data-index="7"></div>
+                            </div>
+                        </div>
+
+                        <div class="stacked-cards-wrapper">
+                            <div class="stacked-cards">
+                                <div class="insight-card active" data-index="0">
+                                    <h3 class="inter font-24 weight-600 text-white mb-3">From Pixels to Play:<br
+                                            class="d-md-block d-none"> How We Blend ANI</h3>
+                                    <p class="inter font-16 text-white mb-0">By Adam Westwood, June 2025</p>
+                                </div>
+                                <div class="insight-card" data-index="1">
+                                    <h3 class="inter font-24 weight-600 text-white mb-3">Building Worlds that<br
+                                            class="d-md-block d-none"> Move with Story</h3>
+                                    <p class="inter font-16 text-white mb-0">By Sarah Lin, June 2025</p>
+                                </div>
+
+                                <div class="insight-card" data-index="2">
+                                    <h3 class="inter font-24 weight-600 text-white mb-3">From Code to Canvas:<br
+                                            class="d-md-block d-none"> The Art of Games</h3>
+                                    <p class="inter font-16 text-white mb-0">By Marcus Reed, June 2025</p>
+                                </div>
+
+                                <div class="insight-card" data-index="3">
+                                    <h3 class="inter font-24 weight-600 text-white mb-3">Learning Through Play:<br
+                                            class="d-md-block d-none"> Our Academy Vision</h3>
+                                    <p class="inter font-16 text-white mb-0">By Aisha Khan, June 2025</p>
+                                </div>
+
+                                <div class="insight-card" data-index="4">
+                                    <h3 class="inter font-24 weight-600 text-white mb-3">Immersion in Motion:<br
+                                            class="d-md-block d-none"> How We Design Flow</h3>
+                                    <p class="inter font-16 text-white mb-0">By Daniel Cruz, June 2025</p>
+                                </div>
+
+                                <div class="insight-card" data-index="5">
+                                    <h3 class="inter font-24 weight-600 text-white mb-3">Frameworks for Fun:<br
+                                            class="d-md-block d-none"> Why Tech Drives Play</h3>
+                                    <p class="inter font-16 text-white mb-0">By Emma Brooks, June 2025</p>
+                                </div>
+
+                                <div class="insight-card" data-index="6">
+                                    <h3 class="inter font-24 weight-600 text-white mb-3">Stories that Interact:<br
+                                            class="d-md-block d-none"> Shaping New Media</h3>
+                                    <p class="inter font-16 text-white mb-0">By Ryan Lee, June 2025</p>
+                                </div>
+
+                                <div class="insight-card" data-index="7">
+                                    <h3 class="inter font-24 weight-600 text-white mb-3">Beyond the Console:<br
+                                            class="d-md-block d-none"> Where Play Evolves</h3>
+                                    <p class="inter font-16 text-white mb-0">By Chloe Park, June 2025</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="assets/stacked-image.png" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-black border-custom">
+        <div class="container gradient-bg py-md-5 py-3">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <p
+                        class="inter font-26 text-white-50 letter-space-4 weight-400 text-center mb-0 align-items-center justify-content-center">
+                        FAQs <span class="fa fa-chevron-down ms-0" style="font-size: 1rem;"></span></p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-black section-vspace">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="inter font-48 weight-600 text-white mb-4">Give us a <span class="yellow-color"><i>
+                                ping</i></span></h1>
+                    <form>
+                        <div class="mb-4">
+                            <input type="text" class="form-control custom-input" placeholder="Full Name *" required>
+                        </div>
+                        <div class="mb-4">
+                            <input type="email" class="form-control custom-input" placeholder="Email *" required>
+                        </div>
+                        <div class="mb-4">
+                            <input type="tel" class="form-control custom-input" placeholder="Phone">
+                        </div>
+                        <div class="mb-4">
+                            <textarea class="form-control custom-input" rows="4"
+                                placeholder="Leave us a message"></textarea>
+                        </div>
+                        <button type="submit" class="send-btn mt-2">Send</button>
+                    </form>
+                </div>
+                <div class="col-md-5 offset-md-1 mt-5 pt-4 text-md-start text-center">
+                    <h2 class="inter font-32 weight-600 text-white mb-3">Address</h2>
+                    <p class="inter font-16 text-white mb-1">2459 Westwood Blvd, Suite 210</p>
+                    <p class="inter font-16 text-white mb-1">Los Angeles, CA 90064</p>
+                    <p class="inter font-16 text-white mb-3">United States</p>
+                    <h2 class="inter font-32 weight-600 text-white mt-5 mb-3">Contact</h2>
+                    <p class="inter font-16 text-white mb-1">+1 (555) 123-4567</p>
+                    <p class="inter font-16 text-white mb-1">Mon–Fri, 9 AM to 6 PM (EST)</p>
+                    <p class="inter font-16 text-white mb-0">support@yourbrand.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<footer class="footer-custom bg-black pt-4">
+    <div class="container">
+        <div class="footer-logo text-center mb-3">
+            <img src="assets/logo.png" alt="Logo" style="height:48px;">
+        </div>
+        <hr class="footer-hr my-4">
+        <div class="row text-white mb-5 pb-md-5 pb-0">
+            <div class="col-md-3 mb-4 mb-md-0">
+                <h5 class="hero-font weight-600 mb-3">Support</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="#" class="footer-link">Returns/Exchange/Refund</a></li>
+                    <li class="mb-2"><a href="#" class="footer-link">Shipping FAQ</a></li>
+                    <li class="mb-2"><a href="#" class="footer-link">Cancellation Policy</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5 class="hero-font weight-600 mb-3">Customer Support</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="mailto:hello@chasehaul.com" class="footer-link">hello@chasehaul.com</a></li>
+                    <li class="mb-2"><a href="#" class="footer-link">Contact Us</a></li>
+                    <li class="mb-2"><a href="#" class="footer-link">Give Us Feedback</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row align-items-center mt-md-5">
+            <div class="col-md-6 d-flex gap-3  justify-content-md-start justify-content-center">
+                <a href="#" class="footer-social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="footer-social"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="footer-social"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="footer-social"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="col-md-6">
+                <form class="footer-subscribe d-flex justify-content-md-end mt-3 mt-md-0">
+                    <input type="email" class="footer-input" placeholder="Subscribe for the latest fashion haul and surprising deals!">
+                    <button type="submit" class="footer-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
     </div>
+</footer>
+<div class="qr-container qr-bottom-right d-flex align-items-center">
+    <div class="qr-code">
+        <img src="assets/qr-code.png" alt="QR Code" class="img-fluid">
+    </div>
+    <div class="qr-text ps-3">
+        <p class="inter-font font-14 weight-500 text-white mb-1">Step Inside Our<br>Virtual Studios</p>
+    </div>
+</div>
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
