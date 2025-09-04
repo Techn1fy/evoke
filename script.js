@@ -290,7 +290,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// Stacked cards functionality - UPDATED INDICATOR
+// Stacked cards functionality - RESPONSIVE
 document.addEventListener('DOMContentLoaded', function() {
   const cardsWrapper = document.querySelector('.stacked-cards-wrapper');
   const cards = document.querySelectorAll('.insight-card');
@@ -298,32 +298,40 @@ document.addEventListener('DOMContentLoaded', function() {
   const segmentMarkers = document.querySelectorAll('.segment-marker');
   let currentIndex = 0;
   let isAnimating = false;
+  let touchStartX = 0;
   let touchStartY = 0;
+  let touchEndX = 0;
   let touchEndY = 0;
-    let touchMoved = false;
-  let swipeTriggered = false;
   const cardCount = cards.length;
   
   if (!cardsWrapper || !cards.length) return;
   
-  // Update progress line
-function updateProgressLine() {
-  // Ensure minimum 5% progress even at first card, then increase proportionally
-  const minProgress = 5;
-  const remainingProgress = 95;
+  // Detect if mobile device
+  const isMobile = () => window.innerWidth < 768;
   
-  // Calculate progress percentage
-  let progressPercentage;
-  
-  // If we're on the last card, force 100%
-  if (currentIndex === cardCount - 1) {
-    progressPercentage = 100;
-  } else {
-    progressPercentage = minProgress + (currentIndex / (cardCount - 1)) * remainingProgress;
+  // Update progress indicator (line or bar)
+  function updateProgress() {
+    const minProgress = 5;
+    const remainingProgress = 95;
+    
+    let progressPercentage;
+    
+    // If we're on the last card, force 100%
+    if (currentIndex === cardCount - 1) {
+      progressPercentage = 100;
+    } else {
+      progressPercentage = minProgress + (currentIndex / (cardCount - 1)) * remainingProgress;
+    }
+    
+    // Update vertical or horizontal fill based on device
+    if (isMobile()) {
+      progressLineFill.style.width = `${progressPercentage}%`;
+      progressLineFill.style.height = '4px'; // Ensure height is set for mobile
+    } else {
+      progressLineFill.style.height = `${progressPercentage}%`;
+      progressLineFill.style.width = '4px'; // Ensure width is set for desktop
+    }
   }
-  
-  progressLineFill.style.height = `${progressPercentage}%`;
-}
   
   // Initialize card positions
   function initializeCards() {
@@ -339,8 +347,8 @@ function updateProgressLine() {
       }
     });
     
-    // Initialize progress line
-    updateProgressLine();
+    // Initialize progress
+    updateProgress();
   }
   
   // Call once to set up initial state
@@ -374,8 +382,8 @@ function updateProgressLine() {
       }
     });
     
-    // Update progress line
-    updateProgressLine();
+    // Update progress indicator
+    updateProgress();
     
     // Reset animation lock after transition completes
     setTimeout(() => {
@@ -383,9 +391,12 @@ function updateProgressLine() {
     }, 500);
   }
   
-  // Improve wheel event handling with lighter debounce
+  // Wheel event handling for desktop
   let wheelTimeout;
   cardsWrapper.addEventListener('wheel', function(event) {
+    // Only use wheel events on desktop
+    if (isMobile()) return;
+    
     event.preventDefault();
     
     // Clear any existing timeout to prevent stacking
@@ -401,92 +412,104 @@ function updateProgressLine() {
       } else if (event.deltaY < -20) {
         transitionCards('prev');
       }
-    }, 10); // Very short delay for responsiveness
+    }, 10); 
   }, { passive: false });
   
-  // Touch support for mobile devices
+  // Touch support with different behavior for mobile vs desktop
   cardsWrapper.addEventListener('touchstart', function(e) {
-    if (isAnimating) return;
+    touchStartX = e.changedTouches[0].screenX;
     touchStartY = e.changedTouches[0].screenY;
-    touchMoved = false;
-    swipeTriggered = false;
   }, { passive: true });
   
-  cardsWrapper.addEventListener('touchmove', function(e) {
-    if (isAnimating || swipeTriggered) return;
+  cardsWrapper.addEventListener('touchend', function(e) {
+    if (isAnimating) return;
+    
+    touchEndX = e.changedTouches[0].screenX;
     touchEndY = e.changedTouches[0].screenY;
-    const touchDistance = touchStartY - touchEndY;
+    
+    const touchDistanceX = touchStartX - touchEndX;
+    const touchDistanceY = touchStartY - touchEndY;
     const minSwipeDistance = 30;
-    if (Math.abs(touchDistance) >= minSwipeDistance) {
-      swipeTriggered = true;
-      e.preventDefault(); // Only prevent scroll if we're actually swiping a card
-      if (touchDistance > 0) {
-        transitionCards('next'); // Swipe up
-      } else {
-        transitionCards('prev'); // Swipe down
+    
+    if (isMobile()) {
+      if (Math.abs(touchDistanceX) >= minSwipeDistance && 
+          Math.abs(touchDistanceX) > Math.abs(touchDistanceY)) {
+        if (touchDistanceX > 0) {
+          transitionCards('next'); 
+        } else {
+          transitionCards('prev'); 
+        }
+      }
+    } else {
+      if (Math.abs(touchDistanceY) >= minSwipeDistance && 
+          Math.abs(touchDistanceY) > Math.abs(touchDistanceX)) {
+        if (touchDistanceY > 0) {
+          transitionCards('next'); 
+        } else {
+          transitionCards('prev'); 
+        }
       }
     }
-  }, { passive: false });
-
-    cardsWrapper.addEventListener('touchend', function(e) {
-    // No-op: logic handled in touchmove for better responsiveness
   }, { passive: true });
   
-  // Make segment markers clickable
+
   segmentMarkers.forEach((marker, index) => {
     marker.addEventListener('click', function() {
       if (isAnimating || index === currentIndex) return;
-      
-      // Calculate direction based on current index and target index
+
       const direction = index > currentIndex ? 'next' : 'prev';
       
-      // Store original index to restore after animation
       const targetIndex = index;
       
-      // If we're skipping multiple steps
       if (Math.abs(targetIndex - currentIndex) > 1) {
-        // Animate through each step with short delays
         let stepsToTake = Math.abs(targetIndex - currentIndex);
         let stepsCounter = 0;
         
-        // Animation interval
         const animateSteps = setInterval(() => {
           transitionCards(direction);
           stepsCounter++;
           
-          // Stop when we've reached the target
           if (stepsCounter >= stepsToTake) {
             clearInterval(animateSteps);
           }
         }, 300);
       } else {
-        // Direct transition for single step
         transitionCards(direction);
       }
     });
   });
   
-let scrollPosition = 0;
-let isScrollDisabled = false;
 
-// Function to prevent scroll
-function preventScroll(e) {
-  if (isScrollDisabled) {
-    window.scrollTo(0, scrollPosition);
+  let scrollPosition = 0;
+  let isScrollDisabled = false;
+  
+  function preventScroll() {
+    if (isScrollDisabled) {
+      window.scrollTo(0, scrollPosition);
+    }
   }
-}
+  
 
-// Prevent page scrolling when cursor is over the cards area
-cardsWrapper.addEventListener('mouseenter', function() {
-  scrollPosition = window.pageYOffset;
-  isScrollDisabled = true;
-  window.addEventListener('scroll', preventScroll);
-});
+  cardsWrapper.addEventListener('mouseenter', function() {
+    if (!isMobile()) {
+      scrollPosition = window.pageYOffset;
+      isScrollDisabled = true;
+      window.addEventListener('scroll', preventScroll);
+    }
+  });
+  
+  cardsWrapper.addEventListener('mouseleave', function() {
+    if (!isMobile()) {
+      isScrollDisabled = false;
+      window.removeEventListener('scroll', preventScroll);
+    }
+  });
+  
 
-cardsWrapper.addEventListener('mouseleave', function() {
-  isScrollDisabled = false;
-  window.removeEventListener('scroll', preventScroll);
-});
+  window.addEventListener('resize', function() {
+    updateProgress(); 
+    initializeCards();
+  });
 });
 
 
