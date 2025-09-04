@@ -300,6 +300,8 @@ document.addEventListener('DOMContentLoaded', function() {
   let isAnimating = false;
   let touchStartY = 0;
   let touchEndY = 0;
+    let touchMoved = false;
+  let swipeTriggered = false;
   const cardCount = cards.length;
   
   if (!cardsWrapper || !cards.length) return;
@@ -404,25 +406,30 @@ function updateProgressLine() {
   
   // Touch support for mobile devices
   cardsWrapper.addEventListener('touchstart', function(e) {
+    if (isAnimating) return;
     touchStartY = e.changedTouches[0].screenY;
+    touchMoved = false;
+    swipeTriggered = false;
   }, { passive: true });
   
-  cardsWrapper.addEventListener('touchend', function(e) {
-    if (isAnimating) return;
-    
+  cardsWrapper.addEventListener('touchmove', function(e) {
+    if (isAnimating || swipeTriggered) return;
     touchEndY = e.changedTouches[0].screenY;
-    
     const touchDistance = touchStartY - touchEndY;
-    const minSwipeDistance = 30; 
-    
-    // Only trigger if it's a deliberate swipe
+    const minSwipeDistance = 30;
     if (Math.abs(touchDistance) >= minSwipeDistance) {
+      swipeTriggered = true;
+      e.preventDefault(); // Only prevent scroll if we're actually swiping a card
       if (touchDistance > 0) {
         transitionCards('next'); // Swipe up
       } else {
         transitionCards('prev'); // Swipe down
       }
     }
+  }, { passive: false });
+
+    cardsWrapper.addEventListener('touchend', function(e) {
+    // No-op: logic handled in touchmove for better responsiveness
   }, { passive: true });
   
   // Make segment markers clickable
