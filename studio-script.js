@@ -1009,159 +1009,347 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+// studio - evoke 
 
+// Expertise Cards Carousel
 document.addEventListener('DOMContentLoaded', function() {
-  const ourWorksFeatureBox = Array.from(document.querySelectorAll('.overlay-menu .feature-box')).find(box => {
-    const heading = box.querySelector('h3');
-    return heading && heading.textContent.trim() === 'Our Works';
-  });
-
-  const overlayMenu = document.querySelector('.overlay-menu');
-  const clientOverlay = document.getElementById('spicy-studios-overlay');
-  const body = document.body;
-
-  if (ourWorksFeatureBox && overlayMenu && clientOverlay) {
-    ourWorksFeatureBox.style.cursor = 'pointer';
-    ourWorksFeatureBox.addEventListener('click', function() {
-      overlayMenu.classList.remove('active');
-      body.style.overflow = '';
-      setTimeout(() => {
-        clientOverlay.classList.add('active');
-        body.classList.add('overlay-active');
-      }, 200);
-    });
-  }
+    const expertiseCards = document.querySelectorAll('.expertise-card');
+    const prevButton = document.querySelector('.expertise-prev-btn');
+    const nextButton = document.querySelector('.expertise-next-btn');
+    
+    if (!expertiseCards.length || !prevButton || !nextButton) return;
+    
+    // Define card positions array for tracking current state
+    let positions = ['left', 'center', 'right'];
+    
+    // Initialize cards to their correct positions
+    function initializeExpertiseCards() {
+        expertiseCards.forEach((card, index) => {
+            card.classList.remove('left-card', 'center-card', 'right-card');
+            card.classList.add(`${positions[index]}-card`);
+            card.setAttribute('data-position', positions[index]);
+        });
+    }
+    
+    // Function to shift cards to the left
+    function shiftExpertiseCardsLeft() {
+        // Rotate the positions array to the left
+        positions.push(positions.shift());
+        updateCardPositions();
+    }
+    
+    // Function to shift cards to the right
+    function shiftExpertiseCardsRight() {
+        // Rotate the positions array to the right
+        positions.unshift(positions.pop());
+        updateCardPositions();
+    }
+    
+    // Update card positions based on the current positions array
+    function updateCardPositions() {
+        expertiseCards.forEach((card, index) => {
+            card.classList.remove('left-card', 'center-card', 'right-card');
+            card.classList.add(`${positions[index]}-card`);
+            card.setAttribute('data-position', positions[index]);
+        });
+    }
+    
+    // Add click events to the navigation buttons
+    prevButton.addEventListener('click', shiftExpertiseCardsLeft);
+    nextButton.addEventListener('click', shiftExpertiseCardsRight);
+    
+    // Initialize card positions
+    initializeExpertiseCards();
 });
 
 
 
+
 document.addEventListener('DOMContentLoaded', function() {
-  const clientsFeatureBox = Array.from(document.querySelectorAll('.overlay-menu .feature-box')).find(box => {
-    const heading = box.querySelector('h3');
-    return heading && heading.textContent.trim() === 'Clients';
-  });
-
-  const overlayMenu = document.querySelector('.overlay-menu');
-  const learnMoreOverlay = document.getElementById('learn-more-overlay');
-  const body = document.body;
-
-  if (clientsFeatureBox && overlayMenu && learnMoreOverlay) {
-    clientsFeatureBox.style.cursor = 'pointer';
-    clientsFeatureBox.addEventListener('click', function() {
-      overlayMenu.classList.remove('active');
-      body.style.overflow = '';
-      setTimeout(() => {
-        learnMoreOverlay.classList.add('active');
-        body.classList.add('overlay-active');
-      }, 200);
+    // Find the feature box containing "Clients" heading
+    const clientsFeatureBox = Array.from(document.querySelectorAll('.feature-box')).find(box => {
+        const heading = box.querySelector('h3');
+        return heading && heading.textContent.trim() === 'Clients';
     });
-  }
+    
+    const learnMoreOverlay = document.getElementById('learn-more-overlay');
+    const body = document.body;
+    
+    if (clientsFeatureBox && learnMoreOverlay) {
+        // Add cursor pointer to indicate it's clickable
+        clientsFeatureBox.style.cursor = 'pointer';
+        
+        // Add click event to the feature box
+        clientsFeatureBox.addEventListener('click', function() {
+            learnMoreOverlay.classList.add('active');
+            body.classList.add('overlay-active');
+        });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Find the feature box containing "Insights" heading
+    const insightsFeatureBox = Array.from(document.querySelectorAll('.feature-box')).find(box => {
+        const heading = box.querySelector('h3');
+        return heading && heading.textContent.trim() === 'Insights';
+    });
+    
+    const insightsOverlay = document.getElementById('insights-overlay');
+    const body = document.body;
+    
+    if (insightsFeatureBox && insightsOverlay) {
+        // Add cursor pointer to indicate it's clickable
+        insightsFeatureBox.style.cursor = 'pointer';
+        
+        // Add click event to the feature box
+        insightsFeatureBox.addEventListener('click', function() {
+            insightsOverlay.classList.add('active');
+            body.classList.add('overlay-active');
+        });
+    }
 });
 
 
+
+
 document.addEventListener('DOMContentLoaded', function() {
-  const insightsFeatureBox = Array.from(document.querySelectorAll('.overlay-menu .feature-box')).find(box => {
-    const heading = box.querySelector('h3');
-    return heading && heading.textContent.trim() === 'Insights';
-  });
-
-  const overlayMenu = document.querySelector('.overlay-menu');
-  const insightsOverlay = document.getElementById('insights-overlay');
-  const body = document.body;
-
-  if (insightsFeatureBox && overlayMenu && insightsOverlay) {
-    insightsFeatureBox.style.cursor = 'pointer';
-    insightsFeatureBox.addEventListener('click', function() {
-      overlayMenu.classList.remove('active');
-      body.style.overflow = '';
-      setTimeout(() => {
-        insightsOverlay.classList.add('active');
-        body.classList.add('overlay-active');
-      }, 200);
-    });
-  }
+    // Find the feature box or button that should trigger the gallery overlay
+    // For example, you can add this to a specific button
+    const galleryTrigger = document.getElementById('gallery-trigger'); // Add this ID to your trigger element
+    
+    if (galleryTrigger) {
+        galleryTrigger.addEventListener('click', function() {
+            const galleryOverlay = document.getElementById('gallery-overlay');
+            if (galleryOverlay) {
+                galleryOverlay.classList.add('active');
+                document.body.classList.add('overlay-active');
+            }
+        });
+    }
+    
+    // Handle close button for the gallery overlay
+    const galleryCloseBtn = document.querySelector('#gallery-overlay .close-overlay-btn');
+    if (galleryCloseBtn) {
+        galleryCloseBtn.addEventListener('click', function() {
+            const galleryOverlay = document.getElementById('gallery-overlay');
+            if (galleryOverlay) {
+                galleryOverlay.classList.remove('active');
+                document.body.classList.remove('overlay-active');
+            }
+        });
+    }
 });
 
 
 
-function resetNavbarToggler() {
-  const navbarToggler = document.querySelector('.navbar-toggler');
-  if (navbarToggler) {
-    navbarToggler.classList.remove('active');
-  }
-}
-
-// Our Works overlay menu handler
+// Gallery images functionality - clicking images opens client overlay
 document.addEventListener('DOMContentLoaded', function() {
-  const ourWorksFeatureBox = Array.from(document.querySelectorAll('.overlay-menu .feature-box')).find(box => {
-    const heading = box.querySelector('h3');
-    return heading && heading.textContent.trim() === 'Our Works';
-  });
-
-  const overlayMenu = document.querySelector('.overlay-menu');
-  const clientOverlay = document.getElementById('spicy-studios-overlay');
-  const body = document.body;
-
-  if (ourWorksFeatureBox && overlayMenu && clientOverlay) {
-    ourWorksFeatureBox.style.cursor = 'pointer';
-    ourWorksFeatureBox.addEventListener('click', function() {
-      overlayMenu.classList.remove('active');
-      resetNavbarToggler();
-      body.style.overflow = '';
-      setTimeout(() => {
-        clientOverlay.classList.add('active');
-        body.classList.add('overlay-active');
-      }, 200);
+    // Get the gallery overlay
+    const galleryOverlay = document.getElementById('gallery-overlay');
+    
+    // Get all gallery images
+    const galleryImages = galleryOverlay ? galleryOverlay.querySelectorAll('.gallery-item img') : [];
+    
+    // Add click event to each gallery image
+    galleryImages.forEach((image, index) => {
+        image.addEventListener('click', function() {
+            // Close the gallery overlay first
+            galleryOverlay.classList.remove('active');
+            
+            // Determine which client overlay to show based on image index
+            // For simplicity, we'll use a mapping of image indices to client overlays
+            const clientOverlays = {
+                0: 'spicy-studios-overlay',
+                1: 'brew-beans-overlay',
+                2: 'pure-chips-studio-overlay',
+                3: 'on-the-go-overlay',
+                4: 'spicy-studios-overlay',
+                5: 'brew-beans-overlay',
+                6: 'pure-chips-studio-overlay',
+                7: 'on-the-go-overlay'
+            };
+            
+            // Get the overlay ID based on image index
+            const overlayId = clientOverlays[index];
+            
+            // Show the client overlay if it exists
+            if (overlayId) {
+                const clientOverlay = document.getElementById(overlayId);
+                if (clientOverlay) {
+                    clientOverlay.classList.add('active');
+                    document.body.classList.add('overlay-active'); // Keep body in overlay mode
+                }
+            }
+        });
+        
+        // Add cursor pointer style to indicate images are clickable
+        image.style.cursor = 'pointer';
     });
-  }
+    
+    // Initialize gallery trigger button
+    const galleryTrigger = document.getElementById('gallery-trigger');
+    if (galleryTrigger && galleryOverlay) {
+        galleryTrigger.addEventListener('click', function() {
+            galleryOverlay.classList.add('active');
+            document.body.classList.add('overlay-active');
+        });
+    }
 });
 
-// Clients overlay menu handler
-document.addEventListener('DOMContentLoaded', function() {
-  const clientsFeatureBox = Array.from(document.querySelectorAll('.overlay-menu .feature-box')).find(box => {
-    const heading = box.querySelector('h3');
-    return heading && heading.textContent.trim() === 'Clients';
-  });
 
-  const overlayMenu = document.querySelector('.overlay-menu');
-  const learnMoreOverlay = document.getElementById('learn-more-overlay');
-  const body = document.body;
-
-  if (clientsFeatureBox && overlayMenu && learnMoreOverlay) {
-    clientsFeatureBox.style.cursor = 'pointer';
-    clientsFeatureBox.addEventListener('click', function() {
-      overlayMenu.classList.remove('active');
-      resetNavbarToggler();
-      body.style.overflow = '';
-      setTimeout(() => {
-        learnMoreOverlay.classList.add('active');
-        body.classList.add('overlay-active');
-      }, 200);
-    });
-  }
+document.getElementById('services-learn-more').addEventListener('click', function() {
+    document.getElementById('new-layout-overlay').classList.add('active');
+    document.body.classList.add('overlay-active');
 });
 
-// Insights overlay menu handler
+
+// Motion Carousel functionality
 document.addEventListener('DOMContentLoaded', function() {
-  const insightsFeatureBox = Array.from(document.querySelectorAll('.overlay-menu .feature-box')).find(box => {
-    const heading = box.querySelector('h3');
-    return heading && heading.textContent.trim() === 'Insights';
-  });
-
-  const overlayMenu = document.querySelector('.overlay-menu');
-  const insightsOverlay = document.getElementById('insights-overlay');
-  const body = document.body;
-
-  if (insightsFeatureBox && overlayMenu && insightsOverlay) {
-    insightsFeatureBox.style.cursor = 'pointer';
-    insightsFeatureBox.addEventListener('click', function() {
-      overlayMenu.classList.remove('active');
-      resetNavbarToggler();
-      body.style.overflow = '';
-      setTimeout(() => {
-        insightsOverlay.classList.add('active');
-        body.classList.add('overlay-active');
-      }, 200);
+    // Get carousel elements - use more specific selectors
+    const carousel = document.querySelector('#new-layout-overlay .motion-carousel');
+    if (!carousel) return;
+    
+    const slides = carousel.querySelectorAll('.motion-slide');
+    const dots = carousel.querySelectorAll('.carousel-dot');
+    const prevBtn = carousel.querySelector('.prev-btn');
+    const nextBtn = carousel.querySelector('.next-btn');
+    
+    if (!slides.length || !dots.length || !prevBtn || !nextBtn) return;
+    
+    console.log("Found carousel with", slides.length, "slides");
+    
+    // Track current slide
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    
+    // Ensure initial state is correct
+    slides.forEach((slide, index) => {
+        slide.style.display = index === 0 ? 'block' : 'none';
+        if (index === 0) {
+            slide.classList.add('active');
+        } else {
+            slide.classList.remove('active');
+        }
     });
-  }
+    
+    // Function to update slide display
+    function updateSlides(newIndex) {
+        // Make sure index is within bounds
+        newIndex = (newIndex + totalSlides) % totalSlides;
+        
+        // Update current slide
+        currentSlide = newIndex;
+        
+        // Update slides
+        slides.forEach((slide, index) => {
+            if (index === currentSlide) {
+                slide.style.display = 'block';
+                slide.classList.add('active');
+            } else {
+                slide.style.display = 'none';
+                slide.classList.remove('active');
+            }
+        });
+        
+        // Update dots
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+        });
+    }
+    
+    // Add click event to dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', function() {
+            updateSlides(index);
+        });
+    });
+    
+    // Add click event to prev button
+    prevBtn.addEventListener('click', function() {
+        updateSlides(currentSlide - 1);
+    });
+    
+    // Add click event to next button
+    nextBtn.addEventListener('click', function() {
+        updateSlides(currentSlide + 1);
+    });
+});
+
+
+
+// Handle case study link clicks in the motion carousel
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the new layout overlay
+    const newLayoutOverlay = document.getElementById('new-layout-overlay');
+    if (!newLayoutOverlay) return;
+    
+    // Get all case study links in the motion carousel
+    const caseStudyLinks = newLayoutOverlay.querySelectorAll('.motion-slide a.link-yellow');
+    if (!caseStudyLinks.length) return;
+    
+    // Map each slide to a specific client overlay
+    const clientOverlayMap = [
+        'spicy-studios-overlay',   // For the first slide (Motion Capture)
+        'brew-beans-overlay',      // For the second slide (Virtual Production)
+        'pure-chips-studio-overlay' // For the third slide (3D Animation)
+    ];
+    
+    // Add click event to each case study link
+    caseStudyLinks.forEach((link, index) => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default anchor behavior
+            
+            // Close the current overlay
+            newLayoutOverlay.classList.remove('active');
+            
+            // Find which slide this link belongs to
+            const slide = link.closest('.motion-slide');
+            const slides = newLayoutOverlay.querySelectorAll('.motion-slide');
+            const slideIndex = Array.from(slides).indexOf(slide);
+            
+            // Get the corresponding client overlay ID
+            const overlayId = clientOverlayMap[slideIndex] || clientOverlayMap[0];
+            
+            // Open the client overlay
+            const clientOverlay = document.getElementById(overlayId);
+            if (clientOverlay) {
+                clientOverlay.classList.add('active');
+                document.body.classList.add('overlay-active');
+            }
+        });
+    });
+});
+
+
+// Handle "Our Works" feature box click in overlay menu
+document.addEventListener('DOMContentLoaded', function() {
+    // Find the feature box containing "Our Works" heading
+    const ourWorksFeatureBox = Array.from(document.querySelectorAll('.feature-box')).find(box => {
+        const heading = box.querySelector('h3');
+        return heading && heading.textContent.trim() === 'Our Works';
+    });
+    
+    const overlayMenu = document.querySelector('.overlay-menu');
+    const clientOverlay = document.getElementById('spicy-studios-overlay'); // Using the first client overlay
+    const body = document.body;
+    
+    if (ourWorksFeatureBox && overlayMenu && clientOverlay) {
+        // Add click event to the feature box
+        ourWorksFeatureBox.addEventListener('click', function() {
+            // Close the overlay menu
+            overlayMenu.classList.remove('active');
+            
+            // Find and deactivate the navbar toggler if it's active
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            if (navbarToggler) {
+                navbarToggler.classList.remove('active');
+            }
+            
+            // Open the client overlay after a short delay to allow the menu to close
+            setTimeout(() => {
+                clientOverlay.classList.add('active');
+                body.classList.add('overlay-active');
+            }, 200);
+        });
+    }
 });

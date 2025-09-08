@@ -233,7 +233,7 @@
   position: absolute;
   top: -5px;
   height: 69px; 
-  background-color: #FC840766;
+  background-color: #214E67;
   border-radius: 1px;
 }
 .navbar.scrolled .navbar-toggler .launch-divider::before {
@@ -297,11 +297,11 @@
 
 .navbar-brand img {
   transition: all 0.3s ease;
-  height: 50px;
+  height: 70px;
 }
 
 .navbar.scrolled .navbar-brand img {
-  height: 40px;
+  height: 50px;
 }
 
 .navbar.scrolled .navbar-toggler {
@@ -317,7 +317,7 @@
   outline: none !important;
 }
 .navbar-toggler {
-  border: 2px solid #FC840766 !important;
+  border: 2px solid #214E67 !important;
   border-radius: 0 !important;
   height: 70px;
   display: flex;
@@ -340,14 +340,14 @@
   position: absolute;
   top: -5px;
   height: 69px; 
-  background-color: #FC840766;
+  background-color: #214E67;
   border-radius: 1px;
   opacity: 1;
 }
 
 @media (max-width: 700px) {
 .navbar-toggler {
-  border: 2px solid #FC840766 !important;
+  border: 2px solid #214E67 !important;
   border-radius: 0 !important;
   height: 50px;
   display: flex;
@@ -370,7 +370,7 @@
   position: absolute;
   top: -5px;
   height: 49px; 
-  background-color: #FC840766;
+  background-color: #214E67;
   border-radius: 1px;
   opacity: 1;
 }
@@ -583,7 +583,7 @@
 }
 
 .carousel-indicators-custom button.active {
-  background: #FC8407;
+  background: #168BCC;
 }
 
 .carousel-nav-buttons .custom-carousel-btn {
@@ -702,7 +702,7 @@
 .progress-line-fill {
   position: absolute;
   width: 4px;
-  background-color: #FC8407;
+  background-color: #168BCC;
   left: 50%;
   transform: translateX(-50%);
   top: 0;
@@ -1079,11 +1079,11 @@
 }
 
 .feature-box {
-  background: rgba(30, 24, 22, 0.45);
+  background: rgba(33, 78, 103, 0.16);
   border-radius: 8px;
   min-height: 90px;
   min-width: 90px;
-  box-shadow: inset 0 0 24px 0 rgba(252, 132, 7, 0.16);
+  box-shadow: inset 0 0 24px 0 rgba(33, 78, 103, 0.16);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1203,7 +1203,7 @@
   transition: color 0.2s;
 }
 .footer-link:hover {
-  color: #FC8407;
+  color: #168BCC;
 }
 
 .footer-social {
@@ -1221,7 +1221,7 @@
 }
 
 .footer-social:hover {
-  background: #FC8407;
+  background: #168BCC;
   color: #fff;
 }
 
@@ -1250,7 +1250,7 @@
 }
 
 .footer-btn {
-  background: #FC8407;
+  background: #168BCC;
   color: #000;
   border: none;
   border-radius: 0;
@@ -1470,7 +1470,7 @@
 }
 
 .faq-toggle:hover {
-  color: #FC8407;
+  color: #168BCC;
 }
 
 .faq-chevron {
@@ -1708,7 +1708,7 @@ border: 0;
 
 .client-detail-box {
     background-color: #131313;
-    box-shadow: inset 0 0 24px 0 rgba(252, 132, 7, 0.16);
+    box-shadow: inset 0 0 24px 0 rgba(33, 78, 103, 0.16);;
     padding: 30px;
     border-radius: 0;
     max-height: 80vh;
@@ -1726,7 +1726,7 @@ border: 0;
 }
 
 .close-overlay-btn:hover {
-    color: #FC8407;
+    color: #168BCC;
 }
 
 .detail-client-logo {
@@ -1754,7 +1754,7 @@ border: 0;
 }
 
 .client-detail-box::-webkit-scrollbar-thumb {
-    background: #FC8407;
+    background: #168BCC;
     border-radius: 3px;
 }
 
@@ -1789,7 +1789,7 @@ body.overlay-active {
 }
 
 .link-yellow {
-    color: #FC8407;
+    color: #168BCC;
 }
 
 
@@ -1822,7 +1822,7 @@ body.overlay-active {
     top: -7px;
     left: 50%;
     transform: translateX(-50%);
-    border: 9px solid #FC8407;
+    border: 9px solid #168BCC;
     border-bottom: none; 
     border-radius: 60px 60px 0 0;
     box-sizing: border-box;
@@ -1837,7 +1837,7 @@ body.overlay-active {
     bottom: -7px;
     left: 50%;
     transform: translateX(-50%);
-    border: 9px solid #FC8407;
+    border: 9px solid #168BCC;
     border-top: none;
     border-radius: 0 0 60px 60px;
     box-sizing: border-box;
@@ -1951,7 +1951,7 @@ body.overlay-active {
 }
 
 .related-icon:hover {
-    border-color: #FC8407;
+    border-color: #168BCC;
 }
 
 
@@ -2048,7 +2048,7 @@ body.overlay-active {
 
 .carousel-nav-btn {
     background: transparent;
-    color: #FC8407;
+    color: #168BCC;
     border: none;
     font-size: 18px;
     cursor: pointer;
@@ -2142,7 +2142,6 @@ body.overlay-active {
 
 
 
-/* Article Overlay Styles */
 .article-container {
     max-width: 100%;
     margin: 0 auto;
@@ -2226,7 +2225,7 @@ body.overlay-active {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('assets/studio-hero.png'); /* Replace with the new hero background image */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/studio-hero.png'); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2257,7 +2256,6 @@ body.overlay-active {
 }
 
 
-/* Background image for "All You Need" section on studio page */
 .bg-black.position-relative.section-vspace::before {
   content: "";
   position: absolute;
@@ -2265,15 +2263,14 @@ body.overlay-active {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('assets/studio-wave.png'); /* Replace with your actual image */
+  background-image: url('assets/studio-wave.png');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  opacity: 0.4; /* Adjust for desired transparency */
-  z-index: 0; /* Behind the content */
+  opacity: 0.4; 
+  z-index: 0;
 }
 
-/* Ensure the content remains on top of the background */
 .bg-black.position-relative.section-vspace .container {
   position: relative;
   z-index: 1;
@@ -2281,7 +2278,7 @@ body.overlay-active {
 
 
 
-/* Expertise Cards Carousel */
+
 .expertise-carousel-container {
     position: relative;
     width: 100%;
@@ -2327,7 +2324,7 @@ body.overlay-active {
 .expertise-card-inner {
     width: 100%;
     height: 100%;
-    padding: 40px;
+    padding: 40px 50px;
     background: #0D0D0D;
     display: flex;
     flex-direction: column;
@@ -2366,6 +2363,11 @@ body.overlay-active {
     .expertise-card.right-card {
         transform: translateX(45%) scale(0.85);
     }
+        .expertise-card-inner {
+
+    padding: 20px;
+
+}
 }
 
 @media (max-width: 768px) {
@@ -2389,6 +2391,11 @@ body.overlay-active {
     .expertise-card.right-card {
         transform: translateX(45%) scale(0.85);
     }
+        .expertise-card-inner {
+
+    padding: 20px;
+
+}
 }
 
 @media (max-width: 576px) {
@@ -2414,6 +2421,11 @@ body.overlay-active {
         transform: translateX(45%) scale(0.85);
         opacity: 0.7;
     }
+    .expertise-card-inner {
+
+    padding: 20px;
+
+}
 }
 
 
@@ -2509,4 +2521,141 @@ body.overlay-active {
   background: #0d5b8c;
   color: #000;
   outline: none;
+}
+
+
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: minmax(120px, auto);
+    gap: 15px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: #1a1a1a;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+
+
+.gallery-item:nth-child(1) {
+    grid-column: span 3;
+    grid-row: span 2;
+}
+
+.gallery-item:nth-child(2) {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+
+.gallery-item:nth-child(3) {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.gallery-item:nth-child(4) {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.gallery-item:nth-child(5) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.gallery-item:nth-child(7) {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.gallery-item:nth-child(6),
+.gallery-item:nth-child(8) {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+@media (max-width: 767px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .gallery-item:nth-child(1),
+    .gallery-item:nth-child(5) {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+    
+    .gallery-item:nth-child(2),
+    .gallery-item:nth-child(3),
+    .gallery-item:nth-child(4),
+    .gallery-item:nth-child(6),
+    .gallery-item:nth-child(7),
+    .gallery-item:nth-child(8) {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
+
+
+.carousel-controls-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.carousel-indicators-dots {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.carousel-dot.active {
+    background-color: #fff;
+}
+
+.carousel-nav-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.carousel-nav-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
 }
