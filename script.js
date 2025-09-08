@@ -265,10 +265,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check if elements exist to avoid errors
     if (!clientsRow) return;
     
-    const prevButton = document.querySelector('.col-md-5 .custom-carousel-btn:first-child');
-    const nextButton = document.querySelector('.col-md-5 .custom-carousel-btn:last-child');
+    // Desktop buttons
+    const desktopPrevButton = document.querySelector('.col-md-5 .custom-carousel-btn:first-child');
+    const desktopNextButton = document.querySelector('.col-md-5 .custom-carousel-btn:last-child');
     
-    if (!prevButton || !nextButton) return;
+    // Mobile buttons
+    const mobilePrevButton = document.querySelector('.col-md-12.d-flex.mt-5 .custom-carousel-btn:first-child');
+    const mobileNextButton = document.querySelector('.col-md-12.d-flex.mt-5 .custom-carousel-btn:last-child');
     
     let currentPosition = 0;
     
@@ -295,23 +298,47 @@ document.addEventListener('DOMContentLoaded', function() {
         clientsRow.style.transform = `translateX(${translateValue}%)`;
         
         // Update button states visually
-        prevButton.classList.toggle('carousel-btn-disabled', currentPosition === 0);
-        nextButton.classList.toggle('carousel-btn-disabled', currentPosition === maxPosition);
+        if (desktopPrevButton) desktopPrevButton.classList.toggle('carousel-btn-disabled', currentPosition === 0);
+        if (desktopNextButton) desktopNextButton.classList.toggle('carousel-btn-disabled', currentPosition === maxPosition);
+        if (mobilePrevButton) mobilePrevButton.classList.toggle('carousel-btn-disabled', currentPosition === 0);
+        if (mobileNextButton) mobileNextButton.classList.toggle('carousel-btn-disabled', currentPosition === maxPosition);
     }
     
-    // Add event listeners
-    prevButton.addEventListener('click', function() {
-        currentPosition = Math.max(0, currentPosition - 1);
-        updateCarousel();
-    });
+    // Add event listeners to desktop buttons
+    if (desktopPrevButton) {
+        desktopPrevButton.addEventListener('click', function() {
+            currentPosition = Math.max(0, currentPosition - 1);
+            updateCarousel();
+        });
+    }
     
-    nextButton.addEventListener('click', function() {
-        const isMobile = window.innerWidth < 768;
-        const maxPosition = isMobile ? 3 : 1;
-        
-        currentPosition = Math.min(maxPosition, currentPosition + 1);
-        updateCarousel();
-    });
+    if (desktopNextButton) {
+        desktopNextButton.addEventListener('click', function() {
+            const isMobile = window.innerWidth < 768;
+            const maxPosition = isMobile ? 3 : 1;
+            
+            currentPosition = Math.min(maxPosition, currentPosition + 1);
+            updateCarousel();
+        });
+    }
+    
+    // Add event listeners to mobile buttons
+    if (mobilePrevButton) {
+        mobilePrevButton.addEventListener('click', function() {
+            currentPosition = Math.max(0, currentPosition - 1);
+            updateCarousel();
+        });
+    }
+    
+    if (mobileNextButton) {
+        mobileNextButton.addEventListener('click', function() {
+            const isMobile = window.innerWidth < 768;
+            const maxPosition = isMobile ? 3 : 1;
+            
+            currentPosition = Math.min(maxPosition, currentPosition + 1);
+            updateCarousel();
+        });
+    }
     
     // Handle window resize
     window.addEventListener('resize', function() {

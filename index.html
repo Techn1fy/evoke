@@ -214,10 +214,10 @@
         <div class="container">
             <div class="row d-flex">
                 <div class="col-md-12">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h1 class="inter font-48 weight-600 text-white text-md-start text-center mb-0">Meet Our Clients
+                    <div class="d-md-flex d-block align-items-center justify-content-between mb-4">
+                        <h1 class="inter font-48 weight-600 text-white text-md-start text-center mb-md-0 mb-3">Meet Our Clients
                         </h1>
-                        <button id="clientsLearnMoreBtn" class="learn-more-btn">Learn More <i
+                        <button id="clientsLearnMoreBtn" class="learn-more-btn d-block ms-md-auto mx-auto mx-md-0">Learn More <i
                                 class="fas fa-arrow-right ms-2"></i></button>
                     </div>
                 </div>
@@ -242,7 +242,7 @@
                     <div class="client-carousel-wrapper position-relative overflow-hidden">
                         <div id="clientsRow" class="client-carousel-row d-flex transition-slide">
                             <div class="client-box-wrapper">
-                                <div class="client-box"
+                                <div class="client-box mt-1"
                                     style="background: linear-gradient(to bottom, #000000 0%, #000000 40%, #ff0080 100%);">
                                     <h4 class="inter font-20 weight-600 text-white mb-3">Spicy Studios</h4>
                                     <img src="assets/client-1.png" alt="Client 1" class="img-fluid client-logo">
@@ -250,7 +250,7 @@
                             </div>
 
                             <div class="client-box-wrapper">
-                                <div class="client-box"
+                                <div class="client-box mt-1"
                                     style="background: linear-gradient(to bottom, #000000 0%, #000000 40%, #8B2FB2 100%);">
                                     <h4 class="inter font-20 weight-600 text-white mb-3">Brew Beans</h4>
                                     <img src="assets/client-2.png" alt="Client 2" class="img-fluid client-logo">
@@ -258,7 +258,7 @@
                             </div>
 
                             <div class="client-box-wrapper">
-                                <div class="client-box"
+                                <div class="client-box mt-1"
                                     style="background: linear-gradient(to bottom, #000000 0%, #000000 40%, #01B721 100%);">
                                     <h4 class="inter font-20 weight-600 text-white mb-3">Pure Chips Studio</h4>
                                     <img src="assets/client-3.png" alt="Client 3" class="img-fluid client-logo">
@@ -267,7 +267,7 @@
 
 
                             <div class="client-box-wrapper">
-                                <div class="client-box"
+                                <div class="client-box mt-1"
                                     style="background: linear-gradient(to bottom, #000000 0%, #000000 40%, #FFA500 100%);">
                                     <h4 class="inter font-20 weight-600 text-white mb-3">The Take Club</h4>
                                     <img src="assets/client-4.png" alt="Client 4" class="img-fluid client-logo">
@@ -298,15 +298,16 @@
                     <p class="color-white-70 inter font-20 text-md-start text-center">From material choices to media
                         choreography, every wall,
                         light, and interaction is tuned to evoke emotion, teach something new, and drive behavior.</p>
-                    <button class="explore-btn mt-3 mx-md-0 mx-auto d-block">
+                    <!-- <button class="explore-btn mt-3 mx-md-0 mx-auto d-block">
                         Explore Other Universes <i class="fa fa-arrow-right ms-2"></i>
-                    </button>
+                    </button> -->
                     <div class="d-flex gap-3 mt-5">
-                        <a href="studio.html">
+                        
                         <div class="feature-box flex-fill d-flex flex-column align-items-center justify-content-center">
+                            <a href="studio.html">
                             <img src="assets/studio.png" alt="Logo 1" class="feature-logo mt-auto mb-2">
+                            </a>
                         </div>
-                        </a>
                         <div class="feature-box flex-fill d-flex flex-column align-items-center justify-content-center">
                             <img src="assets/gaming.png" alt="Logo 2" class="feature-logo mt-auto mb-2">
                         </div>
@@ -359,12 +360,19 @@
     <section class="bg-black section-vspace">
         <div class="container pb-md-5 pb-1 mb-md-5 mb-0">
             <div class="row d-flex justify-content-center align-items-center">
-                <div class="col-md-6">
+                <div class="d-md-none d-block">
+                    <h1 class="inter font-48 weight-600 text-white text-md-start text-center mb-4">Insights</h1>
+                    <p class="color-white-70 inter text-md-start text-center font-20 mb-0">From material choices to media
+                        choreography, every wall, light, is tuned to evoke emotion, teach something new, and drive
+                        behavior.</p>
+                    </div>
+                <div class="col-md-6 order-md-1 order-2">
+                    <div class="d-md-block d-none">
                     <h1 class="inter font-48 weight-600 text-white text-md-start text-center mb-4">Insights</h1>
                     <p class="color-white-70 inter text-md-start text-center font-20">From material choices to media
                         choreography, every wall, light, is tuned to evoke emotion, teach something new, and drive
                         behavior.</p>
-
+                    </div>
                     <div class="cards-container d-flex mt-5">
                         <div class="vertical-indicator me-4">
                             <div class="progress-line-bg"></div>
@@ -433,7 +441,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 order-md-2 order-1">
                     <div class="stacked-images-container">
                         <div class="stacked-images">
                             <div class="stack-image prev-image">
@@ -563,21 +571,21 @@
             </div>
             <hr class="footer-hr my-4">
             <div class="row text-white mb-5 pb-md-5 pb-0">
-                <div class="col-md-3 mb-4 mb-md-0">
+                <!-- <div class="col-md-3 mb-4 mb-md-0">
                     <h5 class="hero-font weight-600 mb-3">Support</h5>
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="#" class="footer-link">Returns/Exchange/Refund</a></li>
                         <li class="mb-2"><a href="#" class="footer-link">Shipping FAQ</a></li>
                         <li class="mb-2"><a href="#" class="footer-link">Cancellation Policy</a></li>
                     </ul>
-                </div>
+                </div> -->
                 <div class="col-md-4">
                     <h5 class="hero-font weight-600 mb-3">Customer Support</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="mailto:hello@chasehaul.com"
-                                class="footer-link">hello@chasehaul.com</a></li>
+                        <!-- <li class="mb-2"><a href="mailto:hello@chasehaul.com"
+                                class="footer-link">hello@chasehaul.com</a></li> -->
                         <li class="mb-2"><a href="#" class="footer-link">Contact Us</a></li>
-                        <li class="mb-2"><a href="#" class="footer-link">Give Us Feedback</a></li>
+                        <!-- <li class="mb-2"><a href="#" class="footer-link">Give Us Feedback</a></li> -->
                     </ul>
                 </div>
             </div>
@@ -591,7 +599,7 @@
                 <div class="col-md-6">
                     <form class="footer-subscribe d-flex justify-content-md-end mt-3 mt-md-0">
                         <input type="email" class="footer-input"
-                            placeholder="Subscribe for the latest fashion haul and surprising deals!">
+                            placeholder="Subscribe for the latest news">
                         <button type="submit" class="footer-btn">Subscribe</button>
                     </form>
                 </div>
@@ -606,9 +614,6 @@
             <p class="inter-font font-14 weight-500 text-white mb-1">Step Inside Our<br>Virtual Studios</p>
         </div>
     </div>
-
-
-
 
 
 
@@ -690,7 +695,7 @@
     <div class="client-overlays">
         <div id="spicy-studios-overlay" class="client-overlay">
             <div class="client-overlay-content">
-                <div class="row d-flex justify-content-end pt-4">
+                <div class="row d-flex justify-content-end pt-md-4 pt-5 mt-md-0 mt-3">
                     <div class="col-md-12 d-flex justify-content-end">
                         <button class="close-overlay-btn"><i class="fas fa-times"></i></button>
                     </div>
@@ -780,10 +785,10 @@
                                 <p class="text-white inter font-18">Below, explore the key platforms and tools that
                                     powered this work — and see how we apply them across projects to deliver
                                     boundary-pushing results.</p>
-                                <span class="text-white inter font-18">Tools:</span> <span class="mx-3"><img
-                                        src="assets/unity.png" height="40" alt=""></span> <span class="mx-3"><img
-                                        src="assets/unreal.png" height="40" alt=""></span><span class="mx-3"><img
-                                        src="assets/blender.png" height="40" alt=""></span>
+                                <span class="text-white inter font-18">Tools:</span> <span class="mx-md-3 mx-1 logo-small"><img
+                                        src="assets/unity.png" alt=""></span> <span class="mx-1 mx-md-3 logo-small"><img
+                                        src="assets/unreal.png" alt=""></span><span class="mx-1 mx-md-3 logo-small"><img
+                                        src="assets/blender.png" alt=""></span>
 
                                 <p class="mt-4"><a class="link-yellow inter font-16 mb-4 " href="#">Learn more about the
                                         tools we use.</a></p>
@@ -836,7 +841,7 @@
         <!-- Brew Beans Overlay -->
         <div id="brew-beans-overlay" class="client-overlay">
             <div class="client-overlay-content">
-                <div class="row d-flex justify-content-end pt-4">
+                <div class="row d-flex justify-content-end pt-md-4 pt-5 mt-md-0 mt-3">
                     <div class="col-md-12 d-flex justify-content-end">
                         <button class="close-overlay-btn"><i class="fas fa-times"></i></button>
                     </div>
@@ -926,10 +931,10 @@
                                 <p class="text-white inter font-18">Below, explore the key platforms and tools that
                                     powered this work — and see how we apply them across projects to deliver
                                     boundary-pushing results.</p>
-                                <span class="text-white inter font-18">Tools:</span> <span class="mx-3"><img
-                                        src="assets/unity.png" height="40" alt=""></span> <span class="mx-3"><img
-                                        src="assets/unreal.png" height="40" alt=""></span><span class="mx-3"><img
-                                        src="assets/blender.png" height="40" alt=""></span>
+                                <span class="text-white inter font-18">Tools:</span> <span class="mx-md-3 mx-1 logo-small"><img
+                                        src="assets/unity.png"  alt=""></span> <span class="mx-1 mx-md-3 logo-small"><img
+                                        src="assets/unreal.png"  alt=""></span><span class="mx-1 mx-md-3 logo-small"><img
+                                        src="assets/blender.png"  alt=""></span>
 
                                 <p class="mt-4"><a class="link-yellow inter font-16 mb-4 " href="#">Learn more about the
                                         tools we use.</a></p>
@@ -982,7 +987,7 @@
         <!-- Pure Chips Studio Overlay -->
         <div id="pure-chips-studio-overlay" class="client-overlay">
             <div class="client-overlay-content">
-                <div class="row d-flex justify-content-end pt-4">
+                <div class="row d-flex justify-content-end pt-md-4 pt-5 mt-md-0 mt-3">
                     <div class="col-md-12 d-flex justify-content-end">
                         <button class="close-overlay-btn"><i class="fas fa-times"></i></button>
                     </div>
@@ -1072,10 +1077,10 @@
                                 <p class="text-white inter font-18">Below, explore the key platforms and tools that
                                     powered this work — and see how we apply them across projects to deliver
                                     boundary-pushing results.</p>
-                                <span class="text-white inter font-18">Tools:</span> <span class="mx-3"><img
-                                        src="assets/unity.png" height="40" alt=""></span> <span class="mx-3"><img
-                                        src="assets/unreal.png" height="40" alt=""></span><span class="mx-3"><img
-                                        src="assets/blender.png" height="40" alt=""></span>
+                                <span class="text-white inter font-18">Tools:</span> <span class="mx-md-3 mx-1 logo-small"><img
+                                        src="assets/unity.png"  alt=""></span> <span class="mx-1 mx-md-3 logo-small"><img
+                                        src="assets/unreal.png"  alt=""></span><span class="mx-1 mx-md-3 logo-small"><img
+                                        src="assets/blender.png"  alt=""></span>
 
                                 <p class="mt-4"><a class="link-yellow inter font-16 mb-4 " href="#">Learn more about the
                                         tools we use.</a></p>
@@ -1128,7 +1133,7 @@
         <!-- On the Go Overlay -->
         <div id="on-the-go-overlay" class="client-overlay">
             <div class="client-overlay-content">
-                <div class="row d-flex justify-content-end pt-4">
+                <div class="row d-flex justify-content-end pt-md-4 pt-5 mt-md-0 mt-3">
                     <div class="col-md-12 d-flex justify-content-end">
                         <button class="close-overlay-btn"><i class="fas fa-times"></i></button>
                     </div>
@@ -1218,10 +1223,10 @@
                                 <p class="text-white inter font-18">Below, explore the key platforms and tools that
                                     powered this work — and see how we apply them across projects to deliver
                                     boundary-pushing results.</p>
-                                <span class="text-white inter font-18">Tools:</span> <span class="mx-3"><img
-                                        src="assets/unity.png" height="40" alt=""></span> <span class="mx-3"><img
-                                        src="assets/unreal.png" height="40" alt=""></span><span class="mx-3"><img
-                                        src="assets/blender.png" height="40" alt=""></span>
+                                <span class="text-white inter font-18">Tools:</span> <span class="mx-md-3 mx-1 logo-small"><img
+                                        src="assets/unity.png"  alt=""></span> <span class="mx-md-3 mx-1 logo-small"><img
+                                        src="assets/unreal.png"  alt=""></span><span class="mx-md-3 mx-1 logo-small"><img
+                                        src="assets/blender.png"  alt=""></span>
 
                                 <p class="mt-4"><a class="link-yellow inter font-16 mb-4 " href="#">Learn more about the
                                         tools we use.</a></p>
@@ -1277,7 +1282,7 @@
     <!-- Learn More Overlay -->
     <div id="learn-more-overlay" class="client-overlay">
         <div class="client-overlay-content">
-            <div class="row d-flex justify-content-end pt-4">
+            <div class="row d-flex justify-content-end pt-md-4 pt-5 mt-md-0 mt-3">
                 <div class="col-md-12 d-flex justify-content-end">
                     <button class="close-overlay-btn"><i class="fas fa-times"></i></button>
                 </div>
@@ -1358,7 +1363,7 @@
     <!-- Insights Overlay -->
     <div id="insights-overlay" class="client-overlay">
         <div class="client-overlay-content">
-            <div class="row d-flex justify-content-end pt-4">
+            <div class="row d-flex justify-content-end pt-md-4 pt-5 mt-md-0 mt-3">
                 <div class="col-md-12 d-flex justify-content-end">
                     <button class="close-overlay-btn"><i class="fas fa-times"></i></button>
                 </div>
@@ -1445,7 +1450,7 @@
     <!-- Insight Article Overlay -->
     <div id="insight-article-overlay" class="client-overlay">
         <div class="client-overlay-content">
-            <div class="row d-flex justify-content-end pt-4">
+            <div class="row d-flex justify-content-end pt-md-4 pt-5 mt-md-0 mt-3">
                 <div class="col-md-12 d-flex justify-content-end">
                     <button class="close-overlay-btn"><i class="fas fa-times"></i></button>
                 </div>

@@ -1968,8 +1968,8 @@ body.overlay-active {
 
 @media (max-width: 767px) {
     .related-projects-container {
-        flex-direction: column;
-        gap: 30px;
+        flex-direction: row;
+        gap: 10px;
     }
     
     .related-icon {
@@ -1979,6 +1979,7 @@ body.overlay-active {
 
     .related-projects-container::before {
         top: 0;
+        content: none;
         bottom: 0;
         left: 50%;
         right: auto;
@@ -2009,7 +2010,7 @@ body.overlay-active {
 
 @media (max-width: 767px) {
     .d-flex.align-items-center.justify-content-between {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center !important;
     }
     
@@ -2047,9 +2048,11 @@ body.overlay-active {
 }
 
 .carousel-nav-btn {
+     position: relative;
     background: transparent;
     color: #168BCC;
     border: none;
+    flex-shrink: 0;
     font-size: 18px;
     cursor: pointer;
     padding: 0 10px;
@@ -2091,7 +2094,14 @@ body.overlay-active {
 
 
 
+.overlay-menu .feature-box {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
 
+.overlay-menu .feature-box:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    background-color: #168BCC;
+}
 
 
 .insight-card-item {
@@ -2642,7 +2652,7 @@ body.overlay-active {
     align-items: center;
 }
 
-.carousel-nav-btn {
+.carousel-nav-btn-2 {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -2656,6 +2666,18 @@ body.overlay-active {
     transition: background-color 0.3s ease;
 }
 
-.carousel-nav-btn:hover {
+.carousel-nav-btn-2:hover {
     background-color: rgba(255, 255, 255, 0.3);
+}
+
+.logo-small img {
+    height: 40px !important;
+    width: auto !important;
+}
+
+@media (max-width: 767px) {
+  .logo-small img {
+    height: 20px !important; 
+    width: auto !important ;
+  }
 }
