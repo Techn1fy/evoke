@@ -39,16 +39,20 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Text reveal on scroll effect
-  const scrollText = document.querySelector('.scroll-reveal-text');
+  const scrollTextElements = document.querySelectorAll('.scroll-reveal-text');
     
-  if (!scrollText) return;
+  if (!scrollTextElements.length) return;
   
-  // Split text into words and wrap each in a span
-  const words = scrollText.textContent.split(' ');
-  scrollText.innerHTML = words.map((word, index) => 
-      `<span class="reveal-word" data-index="${index}">${word}</span>`
-  ).join(' ');
+  // Process each scroll-reveal-text element separately
+  scrollTextElements.forEach((scrollText) => {
+    // Split text into words and wrap each in a span
+    const words = scrollText.textContent.split(' ');
+    scrollText.innerHTML = words.map((word, index) => 
+        `<span class="reveal-word" data-index="${index}">${word}</span>`
+    ).join(' ');
+  });
   
+  // Get all word elements from all paragraphs
   const wordElements = document.querySelectorAll('.reveal-word');
   const wordCount = wordElements.length;
   
@@ -67,13 +71,20 @@ document.addEventListener('DOMContentLoaded', function() {
   let revealStartPoint = 0;
   let revealEndPoint = 0;
   
-  // Set up the positions
+  // Set up the positions based on the first paragraph (adjust as needed)
   function setupPositions() {
-      const rect = scrollText.getBoundingClientRect();
-      revealStartPoint = window.scrollY + rect.top - window.innerHeight;
-      revealEndPoint = window.scrollY + rect.bottom - window.innerHeight/2;
+      const firstScrollText = scrollTextElements[0];
+      const lastScrollText = scrollTextElements[scrollTextElements.length - 1];
+      
+      if (!firstScrollText || !lastScrollText) return;
+      
+      const firstRect = firstScrollText.getBoundingClientRect();
+      const lastRect = lastScrollText.getBoundingClientRect();
+      
+      // Start at the top of the first paragraph, end at the bottom of the last paragraph
+      revealStartPoint = window.scrollY + firstRect.top - window.innerHeight;
+      revealEndPoint = window.scrollY + lastRect.bottom - window.innerHeight/2;
   }
-  
 
   setupPositions();
   

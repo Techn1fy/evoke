@@ -2894,3 +2894,82 @@ body.overlay-active {
         }
     }
 }
+
+
+
+.custom-tabs {
+    border: none;
+}
+
+.custom-tabs .nav-item {
+    padding: 0;
+}
+
+.custom-tabs .nav-link {
+    border-radius: 0;
+    border: 1px solid #4c4c4c;
+    background-color: #000;
+    color: #fff;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    margin: 0;
+    text-align: center;
+}
+
+.custom-tabs .nav-link.active {
+    background-color: #4c4c4c;
+    color: #fff;
+    border-color: #4c4c4c;
+}
+
+.custom-tabs .nav-link:hover:not(.active) {
+    border-color: #4c4c4c;
+    background-color: #121212;
+}
+
+.custom-tabs .nav-item:first-child .nav-link {
+    border-right: none;
+}
+
+
+select.custom-input {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #707070;
+    border-radius: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    padding-right: 2.5rem;
+}
+
+
+select.custom-input option {
+    background-color: #121212;
+    color: #fff !important;
+}
+
+select.custom-input option:hover,
+select.custom-input option:focus {
+    background-color: #851861 !important;
+    color: #fff !important;
+}
+
+
+select.custom-input option:checked {
+    background-color: #851861 !important;
+    color: #fff !important; 
+}
+
+
+select.custom-input:focus-within {
+    box-shadow: 0 0 0 2px rgba(133, 24, 97, 0.25);
+}
+
+select.custom-input option:disabled {
+    color: #707070;
+}

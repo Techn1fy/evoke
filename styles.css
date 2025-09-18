@@ -2589,3 +2589,14 @@ body.overlay-active {
   color: #000;
   outline: none;
 }
+
+
+.yellow-span {
+  color: #F4CF26;
+}
+.maron-span {
+  color: #851861;
+}
+.blue-span {
+  color: #168BCC;
+}

@@ -207,9 +207,31 @@
     <section class="bg-black section-vspace">
         <div class="container">
             <div class="row justify-content-center mb-0">
-                <div class="col-md-6">
-                    <h1 class="inter font-48 weight-600 text-white mb-4 text-center">Give us a <span
-                            class="color-blue"><i>ping</i></span></h1>
+            <div class="col-md-9">
+                <div class="d-flex justify-content-center w-100">
+                    <div class="col-md-2 col-6">
+                    <img src="assets/academy-11.png" alt="Logo" class="img-fluid">
+                    </div>
+                </div>
+            <h1 class="hero-font font-48 weight-600 text-white mb-4 mt-2 text-center">Where Creativity Finds Its Voice.</h1>
+            <p class="color-white-70 inter text-center font-20 mb-4">We’re building a community for designers, animators, and creators a space to learn, share, and grow. Whether you’re here to teach your craft or explore new skills, we’d love to know your journey.</p>
+            </div>
+            <div class="col-md-6">
+
+            <ul class="nav nav-tabs custom-tabs mb-4" id="userTypeTab" role="tablist">
+                <li class="nav-item" role="presentation" style="width: 50%;">
+                    <button class="nav-link active w-100 py-3" id="teacher-tab" data-bs-toggle="tab" data-bs-target="#teacher" type="button" role="tab" aria-controls="teacher" aria-selected="true">I'm a Teacher</button>
+                </li>
+                <li class="nav-item" role="presentation" style="width: 50%;">
+                    <button class="nav-link w-100 py-3" id="student-tab" data-bs-toggle="tab" data-bs-target="#student" type="button" role="tab" aria-controls="student" aria-selected="false">I'm a Student</button>
+                </li>
+            </ul>
+        
+            
+
+            <div class="tab-content" id="userTypeTabContent">
+
+                <div class="tab-pane fade show active" id="teacher" role="tabpanel" aria-labelledby="teacher-tab">
                     <form>
                         <div class="mb-4">
                             <input type="text" class="form-control custom-input" placeholder="Full Name *" required>
@@ -220,9 +242,52 @@
                         <div class="mb-4">
                             <input type="tel" class="form-control custom-input" placeholder="Phone">
                         </div>
+                        <div class="mb-4 row gx-2">
+                            <div class="col-md-6 col-12">
+                                <input type="text" class="form-control custom-input" placeholder="What Can You Teach" required>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <input type="text" class="form-control custom-input" placeholder="Years Of Experience" required>
+                            </div>
+                        </div>
                         <div class="mb-4">
                             <textarea class="form-control custom-input" rows="4"
-                                placeholder="Leave us a message"></textarea>
+                                placeholder="Tell us about your requirements"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="send-studio-btn mt-2">Send</button>
+                        </div>
+                    </form>
+                </div>
+                
+
+                <div class="tab-pane fade" id="student" role="tabpanel" aria-labelledby="student-tab">
+                    <form>
+                        <div class="mb-4">
+                            <input type="text" class="form-control custom-input" placeholder="Full Name *" required>
+                        </div>
+                        <div class="mb-4">
+                            <input type="email" class="form-control custom-input" placeholder="Email *" required>
+                        </div>
+                        <div class="mb-4">
+                            <input type="tel" class="form-control custom-input" placeholder="Phone">
+                        </div>
+                         <div class="mb-4 row gx-2">
+                            <div class="col-md-6 col-12">
+                                <input type="text" class="form-control custom-input" placeholder="What Do you Want to Learn?" required>
+                            </div>
+                            <div class="col-md-6 col-12">
+                            <select class="form-control custom-input" required>
+                                <option value="" disabled selected>Learning Level</option>
+                                <option value="3d-modeling">Beginner</option>
+                                <option value="animation">Intermediate</option>
+                                <option value="game-dev">Advanced</option>
+                            </select>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <textarea class="form-control custom-input" rows="4"
+                                placeholder="Tell us about yourself"></textarea>
                         </div>
                         <div class="text-center">
                             <button type="submit" class="send-studio-btn mt-2">Send</button>
@@ -230,6 +295,8 @@
                     </form>
                 </div>
             </div>
+        </div>
+    </div>
 
             <div class="row mt-5 justify-content-center  border-secondary">
                 <div class="col-md-3">
