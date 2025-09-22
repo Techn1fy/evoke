@@ -2322,11 +2322,11 @@ body.overlay-active {
   }
 }
 
-@media (max-width: 576px) {
+/* @media (max-width: 576px) {
   .hero-studio {
     height: 80vh;
   }
-}
+} */
 
 
 .bg-black.position-relative.section-vspace::before {
