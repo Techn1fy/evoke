@@ -25,47 +25,127 @@
             <a class="navbar-brand" href="academy.html">
                 <img src="assets/academy.png" alt="Logo">
             </a>
-            <button class="navbar-toggler d-flex align-items-center  border-0 ms-auto" type="button"
+            <!-- <button class="navbar-toggler d-flex align-items-center  border-0 ms-auto" type="button"
                 data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false"
                 aria-label="Toggle navigation">
-                <span class="launch-text me-2 hero-font font-16 text-white px-md-3 px-0 d-md-flex d-none"><i><u>Click To
-                            View Our Latest Launch</u></i></span>
-                <span class="launch-divider d-md-flex d-none"></span>
-                <span class="me-2 mond font-34 text-white px-md-3 px-0">Latest</span>
-                <span class="latest-divider"></span>
-                <span class="navbar-toggler-icon mx-md-3 mx-0"></span>
+                <span class="navbar-toggler-icon mx-md-2 mx-0"></span>
                 <span class="close-icon px-3"><i class="fas fa-times"></i></span>
-            </button>
+            </button> -->
         </div>
     </nav>
 
-    <section class="hero-studio position-relative overflow-hidden">
-        <div class="container h-100">
-            <div class="row h-100 justify-content-center">
-                <div class="col-12 col-lg-10 d-flex flex-column justify-content-center hero-content mt-5 pt-5">
-                    <h1 class="hero-font weight-700 text-white text-center">
-                        Build Experiences <br class="d-none d-md-block">That Evolve
-                    </h1>
-                    <div class="col-md-6 d-flex justify-content-center mx-auto mb-5">
-                        <p class="inter-font font-20 text-white text-center mt-3">
-                            Evoke Interactive is the framework behind stories that teach and grow with users.
-                        </p>
-                    </div>
+    <section class="hero-studio position-relative overflow-hidden ">
+        <div class="container section-onlytop mt-5">
+            <div class="row justify-content-center mb-0">
+            <div class="col-md-9">
+                
+            <h1 class="hero-font font-48 weight-600 text-white mb-4 mt-2 text-center">Where Creativity Finds Its Voice.</h1>
+            <p class="color-white-70 inter text-center font-20 mb-4">We’re building a community for designers, animators, and creators a space to learn, share, and grow. Whether you’re here to teach your craft or explore new skills, we’d love to know your journey.</p>
+            </div>
+            <div class="col-md-6">
+
+            <ul class="nav nav-tabs custom-tabs mb-4" id="userTypeTab" role="tablist">
+                <li class="nav-item" role="presentation" style="width: 50%;">
+                    <button class="nav-link active w-100 py-3" id="teacher-tab" data-bs-toggle="tab" data-bs-target="#teacher" type="button" role="tab" aria-controls="teacher" aria-selected="true">I'm a Teacher</button>
+                </li>
+                <li class="nav-item" role="presentation" style="width: 50%;">
+                    <button class="nav-link w-100 py-3" id="student-tab" data-bs-toggle="tab" data-bs-target="#student" type="button" role="tab" aria-controls="student" aria-selected="false">I'm a Student</button>
+                </li>
+            </ul>
+        
+            
+
+            <div class="tab-content" id="userTypeTabContent">
+
+                <div class="tab-pane fade show active" id="teacher" role="tabpanel" aria-labelledby="teacher-tab">
+                    <form class="ajax-form" id="contactForm" method="POST">
+                        <div class="mb-4">
+                            <input type="text" name="full_name" class="form-control custom-input" placeholder="Full Name *" required>
+                        </div>
+                        <div class="mb-4">
+                            <input type="email" name="email" class="form-control custom-input" placeholder="Email *" required>
+                        </div>
+                        <div class="mb-4">
+                            <input type="tel" name="phone" class="form-control custom-input" placeholder="Phone">
+                        </div>
+                        <div class="mb-4 row gx-2">
+                            <div class="col-md-6 col-12">
+                                <input type="text" name="topic" class="form-control custom-input" placeholder="What Can You Teach" required>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <input type="text" name="experience" class="form-control custom-input" placeholder="Years Of Experience" required>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <textarea name="message" class="form-control custom-input" rows="4"
+                                placeholder="Tell us about your requirements"></textarea>
+                        </div>
+                        <input type="hidden" name="submitted_from" value="Teacher">
+
+                        <div class="text-center">
+                            <button type="submit" class="send-studio-btn mt-2" id="sendBtn">Send</button>
+                        </div>
+                    </form>
+                </div>
+                
+
+                <div class="tab-pane fade" id="student" role="tabpanel" aria-labelledby="student-tab">
+                    <form class="ajax-form" id="contactForm2" method="POST">
+                        <div class="mb-4">
+                            <input type="text" name="full_name" class="form-control custom-input" placeholder="Full Name *" required>
+                        </div>
+                        <div class="mb-4">
+                            <input type="email" name="email" class="form-control custom-input" placeholder="Email *" required>
+                        </div>
+                        <div class="mb-4">
+                            <input type="tel" name="phone" class="form-control custom-input" placeholder="Phone">
+                        </div>
+                         <div class="mb-4 row gx-2">
+                            <div class="col-md-6 col-12">
+                                <input name="topic" type="text" class="form-control custom-input" placeholder="What Do you Want to Learn?" required>
+                            </div>
+                            <div class="col-md-6 col-12">
+                            <select name="learning_level" class="form-control custom-input" required>
+                                <option value="" disabled selected>Learning Level</option>
+                                <option value="3d-modeling">Beginner</option>
+                                <option value="animation">Intermediate</option>
+                                <option value="game-dev">Advanced</option>
+                            </select>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <textarea name="message" class="form-control custom-input" rows="4"
+                                placeholder="Tell us about yourself"></textarea>
+                        </div>
+                        <input type="hidden" name="submitted_from" value="Student">
+
+                        <div class="text-center">
+                            <button type="submit" class="send-studio-btn mt-2" id="sendBtn2">Send</button>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <!-- <div class="qr-container position-absolute d-flex align-items-center">
-                <div class="qr-code">
-                    <img src="assets/qr-code.png" alt="QR Code" class="img-fluid">
+        </div>
+    </div>
+
+            <div class="row mt-5 justify-content-center  border-secondary">
+                <div class="col-md-3">
+                    <h2 class="inter font-32 weight-600 text-white mb-3 text-md-start text-center">Address</h2>
+                    <p class="inter font-16 text-white mb-1 text-md-start text-center">2459 Westwood Blvd, Suite 210</p>
+                    <p class="inter font-16 text-white mb-1 text-md-start text-center">Los Angeles, CA 90064</p>
+                    <p class="inter font-16 text-white mb-3 text-md-start text-center">United States</p>
                 </div>
-                <div class="qr-text ps-3">
-                    <p class="inter-font font-14 weight-500 text-white mb-1">Scan to connect</p>
-                    <p class="inter-font font-12 weight-400 text-white-50 mb-0">Experience on mobile</p>
+                <div class="col-md-3">
+                    <h2 class="inter font-32 weight-600 text-white mb-3 text-md-end text-center">Contact</h2>
+                    <p class="inter font-16 text-white mb-1 text-md-end text-center">+1 (555) 123-4567</p>
+                    <p class="inter font-16 text-white mb-1 text-md-end text-center">Mon–Fri, 9 AM to 6 PM (EST)</p>
+                    <p class="inter font-16 text-white mb-0 text-md-end text-center">support@yourbrand.com</p>
                 </div>
-            </div> -->
+            </div>
         </div>
     </section>
 
-    <section class="bg-black section-onlytop">
+    <!-- <section class="bg-black section-onlytop">
         <div class="container pb-5">
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-md-4 g-md-0 d-md-block d-none">
@@ -197,14 +277,14 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
 
 
 
 
 
-    <section class="bg-black section-vspace">
+    <!-- <section id="contact" class="bg-black section-vspace">
         <div class="container">
             <div class="row justify-content-center mb-0">
             <div class="col-md-9">
@@ -317,7 +397,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <footer class="footer-custom bg-black pt-4">
         <div class="container">
@@ -326,20 +406,34 @@
             </div>
             <hr class="footer-hr my-4">
             <div class="row text-white mb-5 pb-md-5 pb-0">
-                <!-- <div class="col-md-3 mb-4 mb-md-0">
-                    <h5 class="hero-font weight-600 mb-3">Support</h5>
+                                <div class="col-md-2 mb-4 mb-md-0">
+                    <h5 class="hero-font weight-600 mb-3">Our Products</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="footer-link">Returns/Exchange/Refund</a></li>
-                        <li class="mb-2"><a href="#" class="footer-link">Shipping FAQ</a></li>
-                        <li class="mb-2"><a href="#" class="footer-link">Cancellation Policy</a></li>
+                        <li class="mb-2"><a href="index.html" class="footer-link">Evoke Interactive</a></li>
+                        <li class="mb-2"><a href="studio.html" class="footer-link">Studio</a></li>
+                        <li class="mb-2"><a href="gaming.html" class="footer-link">Gaming</a></li>
+                        
+                    </ul>
+                </div>
+
+                <!-- <div class="col-md-2 mb-4 mb-md-0">
+                    <h5 class="hero-font weight-600 mb-3">Information</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="footer-link">Our Works</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Services</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Clients</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Insights</a></li>
                     </ul>
                 </div> -->
+
                 <div class="col-md-4">
-                    <h5 class="hero-font weight-600 mb-3">Customer Support</h5>
+                    <h5 class="hero-font weight-600 mb-3">Need Help?</h5>
                     <ul class="list-unstyled">
                         <!-- <li class="mb-2"><a href="mailto:hello@chasehaul.com"
                                 class="footer-link">hello@chasehaul.com</a></li> -->
                         <li class="mb-2"><a href="#" class="footer-link">Contact Us</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Terms of Service</a></li>
                         <!-- <li class="mb-2"><a href="#" class="footer-link">Give Us Feedback</a></li> -->
                     </ul>
                 </div>
@@ -360,14 +454,16 @@
             </div>
         </div>
     </footer>
-    <div class="qr-container qr-bottom-right d-flex align-items-center">
+    <!-- <div class="qr-container qr-bottom-right d-flex align-items-center">
+        <a href="academy.html#contact">
         <div class="qr-code">
             <img src="assets/qr-code.png" alt="QR Code" class="img-fluid">
         </div>
         <div class="qr-text ps-3">
-            <p class="inter-font font-14 weight-500 text-white mb-1">Step Inside Our<br>Virtual Studios</p>
+            <p class="inter-font font-14 weight-500 text-white mb-1">Contact Us</p>
         </div>
-    </div>
+        </a>
+    </div> -->
 
 
 
@@ -386,7 +482,7 @@
                 <div class="col-md-4 mb-4">
                     <div class="feature-box d-flex flex-column mb-4" style="cursor: pointer;">
                         <a style="text-decoration: none;" href="index.html">
-                            <h3 class="text-white font-24 weight-600 w-100 text-start px-3">Evoke</h3>
+                            <h3 class="text-white font-24 weight-600 w-100 text-start px-3">Evoke Interactive</h3>
                             <hr>
                             <p class="text-white px-3 text-start w-100">Where worlds bend, stories twist, and
                                 imagination leads.</p>
@@ -483,8 +579,8 @@
                                     <li>60% increase in client inquiries</li>
                                     <li>Audience feedback: “It feels like walking through an art dream.”</li>
                                 </ul>
-                                <a class="link-yellow inter font-16 mb-4" href="#">See more success stories like
-                                    this</a>
+                                <!-- <a class="link-yellow inter font-16 mb-4" href="#">See more success stories like
+                                    this</a> -->
                             </div>
                         </div>
                         <div class="row mb-5">
@@ -632,8 +728,8 @@
                                     <li>60% increase in client inquiries</li>
                                     <li>Audience feedback: “It feels like walking through an art dream.”</li>
                                 </ul>
-                                <a class="link-yellow inter font-16 mb-4" href="#">See more success stories like
-                                    this</a>
+                                <!-- <a class="link-yellow inter font-16 mb-4" href="#">See more success stories like
+                                    this</a> -->
                             </div>
                         </div>
                         <div class="row mb-5">
@@ -781,8 +877,8 @@
                                     <li>60% increase in client inquiries</li>
                                     <li>Audience feedback: “It feels like walking through an art dream.”</li>
                                 </ul>
-                                <a class="link-yellow inter font-16 mb-4" href="#">See more success stories like
-                                    this</a>
+                                <!-- <a class="link-yellow inter font-16 mb-4" href="#">See more success stories like
+                                    this</a> -->
                             </div>
                         </div>
                         <div class="row mb-5">
@@ -930,8 +1026,8 @@
                                     <li>60% increase in client inquiries</li>
                                     <li>Audience feedback: “It feels like walking through an art dream.”</li>
                                 </ul>
-                                <a class="link-yellow inter font-16 mb-4" href="#">See more success stories like
-                                    this</a>
+                                <!-- <a class="link-yellow inter font-16 mb-4" href="#">See more success stories like
+                                    this</a> -->
                             </div>
                         </div>
                         <div class="row mb-5">

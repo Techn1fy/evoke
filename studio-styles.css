@@ -1377,6 +1377,30 @@
   height: 48px;
 }
 
+.qr-container a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.qr-code {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qr-text {
+    /* padding-left: 12px; */
+    display: flex;
+    align-items: center;
+}
+
+.qr-text p {
+    margin-bottom: 0;
+    color: #fff;
+    font-size: 1rem;
+}
+
 @media (max-width: 767px) {
   .qr-bottom-right {
     right: 12px;

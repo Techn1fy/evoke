@@ -651,8 +651,27 @@ document.addEventListener('DOMContentLoaded', function() {
   // Only trigger when clicking the hamburger icon, not the entire button
   togglerIcon.addEventListener('click', function(e) {
     e.stopPropagation(); // Prevent event from bubbling up to parent elements
+            // Check if any overlay is open
+    const activeOverlay = document.querySelector('.client-overlay.active');
+    if (activeOverlay) {
+      // Close the overlay
+      activeOverlay.classList.remove('active');
+      body.classList.remove('overlay-active');
+      // Open the menu
+      navbarToggler.classList.add('active');
+      overlayMenu.classList.add('active');
+      body.style.overflow = 'hidden';
+      return;
+    }
+
+    // Default menu toggle
     navbarToggler.classList.toggle('active');
     overlayMenu.classList.toggle('active');
+    if (overlayMenu.classList.contains('active')) {
+      body.style.overflow = 'hidden';
+    } else {
+      body.style.overflow = '';
+    }
     
     // Prevent scrolling when overlay is active
     if (overlayMenu.classList.contains('active')) {
@@ -704,6 +723,75 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+document.addEventListener('DOMContentLoaded', function() {
+  const overlayContactLink = document.getElementById('overlay-contact-link');
+  const overlayMenu = document.querySelector('.overlay-menu');
+  const navbarToggler = document.querySelector('.navbar-toggler');
+  const body = document.body;
+
+  if (overlayContactLink && overlayMenu) {
+    overlayContactLink.addEventListener('click', function() {
+      overlayMenu.classList.remove('active');
+      if (navbarToggler) navbarToggler.classList.remove('active');
+      body.style.overflow = '';
+      // Let the anchor scroll happen naturally
+    });
+  }
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const footerOurWorksLink = document.getElementById('footer-our-works-link');
+  const clientOverlay = document.getElementById('spicy-studios-overlay'); 
+  const body = document.body;
+
+  if (footerOurWorksLink && clientOverlay) {
+    footerOurWorksLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      clientOverlay.classList.add('active');
+      body.classList.add('overlay-active');
+    });
+  }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const footerClientsLink = document.getElementById('footer-clients-link');
+  const learnMoreOverlay = document.getElementById('learn-more-overlay');
+  const body = document.body;
+
+  if (footerClientsLink && learnMoreOverlay) {
+    footerClientsLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      learnMoreOverlay.classList.add('active');
+      body.classList.add('overlay-active');
+    });
+  }
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const servicesFeatureBox = Array.from(document.querySelectorAll('.overlay-menu .feature-box')).find(box => {
+    const heading = box.querySelector('h3');
+    return heading && heading.textContent.trim() === 'Services';
+  });
+
+  const overlayMenu = document.querySelector('.overlay-menu');
+  const body = document.body;
+  const navbarToggler = document.querySelector('.navbar-toggler');
+  const ourServicesSection = document.getElementById('our-services');
+
+  if (servicesFeatureBox && overlayMenu && ourServicesSection) {
+    servicesFeatureBox.style.cursor = 'pointer';
+    servicesFeatureBox.addEventListener('click', function() {
+      overlayMenu.classList.remove('active');
+      if (navbarToggler) navbarToggler.classList.remove('active');
+      body.style.overflow = '';
+      setTimeout(() => {
+        ourServicesSection.scrollIntoView({ behavior: 'smooth' });
+      }, 200);
+    });
+  }
+});
 
 
 

@@ -678,8 +678,27 @@ document.addEventListener('DOMContentLoaded', function() {
   // Only trigger when clicking the hamburger icon, not the entire button
   togglerIcon.addEventListener('click', function(e) {
     e.stopPropagation(); // Prevent event from bubbling up to parent elements
+            // Check if any overlay is open
+    const activeOverlay = document.querySelector('.client-overlay.active');
+    if (activeOverlay) {
+      // Close the overlay
+      activeOverlay.classList.remove('active');
+      body.classList.remove('overlay-active');
+      // Open the menu
+      navbarToggler.classList.add('active');
+      overlayMenu.classList.add('active');
+      body.style.overflow = 'hidden';
+      return;
+    }
+
+    // Default menu toggle
     navbarToggler.classList.toggle('active');
     overlayMenu.classList.toggle('active');
+    if (overlayMenu.classList.contains('active')) {
+      body.style.overflow = 'hidden';
+    } else {
+      body.style.overflow = '';
+    }
     
     // Prevent scrolling when overlay is active
     if (overlayMenu.classList.contains('active')) {

@@ -28,12 +28,12 @@
             <button class="navbar-toggler d-flex align-items-center  border-0 ms-auto" type="button"
                 data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false"
                 aria-label="Toggle navigation">
-                <span class="launch-text me-2 hero-font font-16 text-white px-md-3 px-0 d-md-flex d-none"><i><u>Click To
+                <!-- <span class="launch-text me-2 hero-font font-16 text-white px-md-3 px-0 d-md-flex d-none"><i><u>Click To
                             View Our Latest Launch</u></i></span>
                 <span class="launch-divider d-md-flex d-none"></span>
                 <span class="me-2 mond font-34 text-white px-md-3 px-0">Latest</span>
-                <span class="latest-divider"></span>
-                <span class="navbar-toggler-icon mx-md-3 mx-0"></span>
+                <span class="latest-divider"></span> -->
+                <span class="navbar-toggler-icon mx-md-2 mx-0"></span>
                 <span class="close-icon px-3"><i class="fas fa-times"></i></span>
             </button>
         </div>
@@ -87,7 +87,7 @@
 
     <section class="bg-black section-onlytop">
         <div class="container">
-            <div class="row">
+            <div class="row" id="our-services">
                 <div class="col-md-4 mb-md-0 mb-4">
                     <img src="assets/gamedev-1.png" class="img-fluid" alt="">
                 </div>
@@ -185,7 +185,7 @@
 
 
 
-    <section class="bg-black section-vspace">
+    <section id="contact" class="bg-black section-vspace">
         <div class="container">
             <div class="row justify-content-center mb-0">
                 <div class="col-md-6">
@@ -238,20 +238,35 @@
             </div>
             <hr class="footer-hr my-4">
             <div class="row text-white mb-5 pb-md-5 pb-0">
-                <!-- <div class="col-md-3 mb-4 mb-md-0">
-                    <h5 class="hero-font weight-600 mb-3">Support</h5>
+                                <div class="col-md-2 mb-4 mb-md-0">
+                    <h5 class="hero-font weight-600 mb-3">Our Products</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="footer-link">Returns/Exchange/Refund</a></li>
-                        <li class="mb-2"><a href="#" class="footer-link">Shipping FAQ</a></li>
-                        <li class="mb-2"><a href="#" class="footer-link">Cancellation Policy</a></li>
+                        <li class="mb-2"><a href="index.html" class="footer-link">Evoke Interactive</a></li>
+                        <li class="mb-2"><a href="studio.html" class="footer-link">Studio</a></li>
+
+                        <li class="mb-2"><a href="academy.html" class="footer-link">Academy</a></li>
                     </ul>
-                </div> -->
+                </div>
+
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h5 class="hero-font weight-600 mb-3">Information</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="footer-link" id="footer-our-works-link">Our Works</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Services</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link"  id="footer-clients-link">Clients</a></li>
+                        <!-- <li class="mb-2"><a href="#" class="footer-link">Insights</a></li> -->
+                    </ul>
+                </div>
+
+
                 <div class="col-md-4">
-                    <h5 class="hero-font weight-600 mb-3">Customer Support</h5>
+                    <h5 class="hero-font weight-600 mb-3">Need Help?</h5>
                     <ul class="list-unstyled">
                         <!-- <li class="mb-2"><a href="mailto:hello@chasehaul.com"
                                 class="footer-link">hello@chasehaul.com</a></li> -->
                         <li class="mb-2"><a href="#" class="footer-link">Contact Us</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Terms of Service</a></li>
                         <!-- <li class="mb-2"><a href="#" class="footer-link">Give Us Feedback</a></li> -->
                     </ul>
                 </div>
@@ -273,12 +288,14 @@
         </div>
     </footer>
     <div class="qr-container qr-bottom-right d-flex align-items-center">
-        <div class="qr-code">
+        <a href="gaming.html#contact">
+        <!-- <div class="qr-code">
             <img src="assets/qr-code.png" alt="QR Code" class="img-fluid">
+        </div> -->
+        <div class="qr-text">
+            <p class="inter-font font-14 weight-500 text-white mb-1">Contact Us <i class="fas fa-chevron-right ms-1"></i></p>
         </div>
-        <div class="qr-text ps-3">
-            <p class="inter-font font-14 weight-500 text-white mb-1">Step Inside Our<br>Virtual Studios</p>
-        </div>
+        </a>
     </div>
 
 
@@ -298,7 +315,7 @@
                 <div class="col-md-4 mb-4">
                     <div class="feature-box d-flex flex-column mb-4" style="cursor: pointer;">
                         <a style="text-decoration: none;" href="index.html">
-                            <h3 class="text-white font-24 weight-600 w-100 text-start px-3">Evoke</h3>
+                            <h3 class="text-white font-24 weight-600 w-100 text-start px-3">Evoke Interactive</h3>
                             <hr>
                             <p class="text-white px-3 text-start w-100">Where worlds bend, stories twist, and
                                 imagination leads.</p>
@@ -353,13 +370,23 @@
                             impact.</p>
                     </div>
                 </div>
-                <div class="col-md-6 mb-4">
+                <!-- <div class="col-md-6 mb-4">
                     <div class="feature-box d-flex flex-column mb-4" style="cursor: pointer;">
                         <h3 class="text-white font-24 weight-600 w-100 text-start px-3">Insights</h3>
                         <hr>
                         <p class="text-white px-3 text-start w-100">Forward-thinking perspectives that shape what’s
                             next.</p>
                     </div>
+                </div> -->
+                <div class="col-md-6 mb-4">
+                    <a style="text-decoration: none !important;" href="#contact" id="overlay-contact-link">
+                    <div class="feature-box d-flex flex-column mb-4">
+                        <h3 class="text-white font-24 weight-600 w-100 text-start px-3">Contact Us</h3>
+                        <hr>
+                        <!-- Add an empty paragraph to match the height of other boxes -->
+                        <p class="text-white px-3 text-start w-100" style="visibility:hidden;">Spacer</p>
+                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -396,8 +423,8 @@
                                     <li>60% increase in client inquiries</li>
                                     <li>Audience feedback: “It feels like walking through an art dream.”</li>
                                 </ul>
-                                <a class="link-yellow inter font-16 mb-4" href="#">See more success stories like
-                                    this</a>
+                                <!-- <a class="link-yellow inter font-16 mb-4" href="#">See more success stories like
+                                    this</a> -->
                             </div>
                         </div>
                         <div class="row mb-5">
@@ -464,8 +491,8 @@
                                     class="mx-1 mx-md-3 logo-small"><img src="assets/unreal.png" alt=""></span><span
                                     class="mx-1 mx-md-3 logo-small"><img src="assets/blender.png" alt=""></span>
 
-                                <p class="mt-4"><a class="link-yellow inter font-16 mb-4 " href="#">Learn more about the
-                                        tools we use.</a></p>
+                                <!-- <p class="mt-4"><a class="link-yellow inter font-16 mb-4 " href="#">Learn more about the
+                                        tools we use.</a></p> -->
                             </div>
                         </div>
                         <div class="row mb-5">
@@ -485,8 +512,8 @@
                                     an experience. Our audiences were hooked, and so were we. We are all very
                                     impressed!”</p>
                                 <p class="text-white inter font-18">— Jason Kim, Executive Producer, Spicy Studio</p>
-                                <p class="mt-3"><a class="link-yellow inter font-16 mb-4 " href="#">Hear more from our
-                                        clients</a></p>
+                                <!-- <p class="mt-3"><a class="link-yellow inter font-16 mb-4 " href="#">Hear more from our
+                                        clients</a></p> -->
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -545,8 +572,8 @@
                                     <li>60% increase in client inquiries</li>
                                     <li>Audience feedback: “It feels like walking through an art dream.”</li>
                                 </ul>
-                                <a class="link-yellow inter font-16 mb-4" href="#">See more success stories like
-                                    this</a>
+                                <!-- <a class="link-yellow inter font-16 mb-4" href="#">See more success stories like
+                                    this</a> -->
                             </div>
                         </div>
                         <div class="row mb-5">
@@ -613,8 +640,8 @@
                                     class="mx-1 mx-md-3 logo-small"><img src="assets/unreal.png" alt=""></span><span
                                     class="mx-1 mx-md-3 logo-small"><img src="assets/blender.png" alt=""></span>
 
-                                <p class="mt-4"><a class="link-yellow inter font-16 mb-4 " href="#">Learn more about the
-                                        tools we use.</a></p>
+                                <!-- <p class="mt-4"><a class="link-yellow inter font-16 mb-4 " href="#">Learn more about the
+                                        tools we use.</a></p> -->
                             </div>
                         </div>
                         <div class="row mb-5">
@@ -634,8 +661,8 @@
                                     an experience. Our audiences were hooked, and so were we. We are all very
                                     impressed!”</p>
                                 <p class="text-white inter font-18">— Jason Kim, Executive Producer, Spicy Studio</p>
-                                <p class="mt-3"><a class="link-yellow inter font-16 mb-4 " href="#">Hear more from our
-                                        clients</a></p>
+                                <!-- <p class="mt-3"><a class="link-yellow inter font-16 mb-4 " href="#">Hear more from our
+                                        clients</a></p> -->
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -694,8 +721,8 @@
                                     <li>60% increase in client inquiries</li>
                                     <li>Audience feedback: “It feels like walking through an art dream.”</li>
                                 </ul>
-                                <a class="link-yellow inter font-16 mb-4" href="#">See more success stories like
-                                    this</a>
+                                <!-- <a class="link-yellow inter font-16 mb-4" href="#">See more success stories like
+                                    this</a> -->
                             </div>
                         </div>
                         <div class="row mb-5">
@@ -762,8 +789,8 @@
                                     class="mx-1 mx-md-3 logo-small"><img src="assets/unreal.png" alt=""></span><span
                                     class="mx-1 mx-md-3 logo-small"><img src="assets/blender.png" alt=""></span>
 
-                                <p class="mt-4"><a class="link-yellow inter font-16 mb-4 " href="#">Learn more about the
-                                        tools we use.</a></p>
+                                <!-- <p class="mt-4"><a class="link-yellow inter font-16 mb-4 " href="#">Learn more about the
+                                        tools we use.</a></p> -->
                             </div>
                         </div>
                         <div class="row mb-5">
@@ -843,8 +870,8 @@
                                     <li>60% increase in client inquiries</li>
                                     <li>Audience feedback: “It feels like walking through an art dream.”</li>
                                 </ul>
-                                <a class="link-yellow inter font-16 mb-4" href="#">See more success stories like
-                                    this</a>
+                                <!-- <a class="link-yellow inter font-16 mb-4" href="#">See more success stories like
+                                    this</a> -->
                             </div>
                         </div>
                         <div class="row mb-5">
@@ -911,8 +938,8 @@
                                     class="mx-1 mx-md-3 logo-small"><img src="assets/unreal.png" alt=""></span><span
                                     class="mx-1 mx-md-3 logo-small"><img src="assets/blender.png" alt=""></span>
 
-                                <p class="mt-4"><a class="link-yellow inter font-16 mb-4 " href="#">Learn more about the
-                                        tools we use.</a></p>
+                                <!-- <p class="mt-4"><a class="link-yellow inter font-16 mb-4 " href="#">Learn more about the
+                                        tools we use.</a></p> -->
                             </div>
                         </div>
                         <div class="row mb-5">
@@ -932,8 +959,8 @@
                                     an experience. Our audiences were hooked, and so were we. We are all very
                                     impressed!”</p>
                                 <p class="text-white inter font-18">— Jason Kim, Executive Producer, Spicy Studio</p>
-                                <p class="mt-3"><a class="link-yellow inter font-16 mb-4 " href="#">Hear more from our
-                                        clients</a></p>
+                                <!-- <p class="mt-3"><a class="link-yellow inter font-16 mb-4 " href="#">Hear more from our
+                                        clients</a></p> -->
                             </div>
                         </div>
                         <div class="row mb-3">
