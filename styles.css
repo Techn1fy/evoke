@@ -264,6 +264,11 @@
   transform: translateX(0);
 }
 
+.auto-height {
+  width: 90px;
+  height:auto;
+}
+
 .navbar-toggler:hover .launch-divider {
   opacity: 1;
   width: 2px;
@@ -284,6 +289,10 @@
   .navbar-toggler:hover .launch-text {
     max-width: 230px;
   }
+  .auto-height {
+  width: 50px;
+  height:auto;
+}
 }
 
 .navbar {
@@ -541,11 +550,12 @@
 }
 
 .custom-carousel-btn {
-  background: #808080;
+  background: rgb(248, 248, 248);
   width: 40px;
   height: 40px;
   border: none;
   border-radius: 50%;
+  opacity: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1468,8 +1478,8 @@ display: none;
 .qr-bottom-right {
   position: fixed;
   border: 1px solid #595959;
-  right: 24px;
-  bottom: 24px;
+  right: 54px;
+  bottom: 44px;
   z-index: 19;
   background: rgba(21, 21, 21, 0.6);
   border-radius: 0;

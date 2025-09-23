@@ -510,7 +510,8 @@
 }
 
 .custom-carousel-btn {
-  background: #b6b3b3;
+    background: rgb(248, 248, 248);
+  opacity: 1;
   width: 40px;
   height: 40px;
   border: none;
@@ -1407,8 +1408,8 @@
 .qr-bottom-right {
   position: fixed;
   border: 1px solid #595959;
-  right: 24px;
-  bottom: 24px;
+  right: 54px;
+  bottom: 44px;
   z-index: 19;
   background: rgba(21, 21, 21, 0.6);
   border-radius: 0;

@@ -615,6 +615,19 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+document.addEventListener('DOMContentLoaded', function() {
+  const qr = document.querySelector('.qr-bottom-right');
+  if (!qr) return;
+
+  function removeQrAnimationDelay() {
+    qr.style.animationDelay = '0s';
+    qr.removeEventListener('animationend', removeQrAnimationDelay);
+  }
+
+  // Remove the delay after the first animation completes
+  qr.addEventListener('animationend', removeQrAnimationDelay);
+});
+
 // FAQ Toggle Functionality
 document.addEventListener('DOMContentLoaded', function() {
   const faqToggle = document.getElementById('faqToggle');
